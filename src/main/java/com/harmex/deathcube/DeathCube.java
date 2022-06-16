@@ -17,6 +17,7 @@ public class DeathCube {
     public static final String MODID = "deathcube";
     private static final Logger LOGGER = LogUtils.getLogger();
 
+    //test
     public DeathCube() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
