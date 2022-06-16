@@ -1,5 +1,7 @@
 package com.harmex.deathcube;
 
+import com.harmex.deathcube.block.ModBlocks;
+import com.harmex.deathcube.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
@@ -19,6 +21,9 @@ public class DeathCube {
 
     public DeathCube() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
