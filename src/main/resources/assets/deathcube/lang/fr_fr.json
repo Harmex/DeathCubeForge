@@ -13,13 +13,15 @@
   "item.deathcube.emerald_shovel": "Pelle en émeraude",
   "item.deathcube.emerald_hoe": "Houe en émeraude",
 
+  "item.deathcube.obsidian_sword": "Épée en obsidienne",
+  "item.deathcube.obsidian_pickaxe": "Pioche en obsidienne",
+  "item.deathcube.obsidian_axe": "Hache en obsidienne",
+  "item.deathcube.obsidian_shovel": "Pelle en obsidienne",
+  "item.deathcube.obsidian_hoe": "Houe en obsidienne",
+
   "block.deathcube.cherry_leaves": "Feuilles de Cerisier",
   "block.deathcube.obsidian_manipulator": "Manipulateur d'Obsidienne",
 
-  "itemGroup.deathcube": "DeathCube",
-  "item.deathcube.emerald_sword": "Emerald Sword",
-  "item.deathcube.emerald_pickaxe": "Emerald Pickaxe",
-  "item.deathcube.emerald_axe": "Emerald Axe",
-  "item.deathcube.emerald_shovel": "Emerald Shovel",
-  "item.deathcube.emerald_hoe": "Emerald Hoe"
+  "itemGroup.deathcube_misc": "DeathCube | Divers",
+  "itemGroup.deathcube_tools": "DeathCube | Outils"
 }

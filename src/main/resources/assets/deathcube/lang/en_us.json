@@ -13,8 +13,15 @@
   "item.deathcube.emerald_shovel": "Emerald Shovel",
   "item.deathcube.emerald_hoe": "Emerald Hoe",
 
+  "item.deathcube.obsidian_sword": "Obsidian Sword",
+  "item.deathcube.obsidian_pickaxe": "Obsidian Pickaxe",
+  "item.deathcube.obsidian_axe": "Obsidian Axe",
+  "item.deathcube.obsidian_shovel": "Obsidian Shovel",
+  "item.deathcube.obsidian_hoe": "Obsidian Hoe",
+
   "block.deathcube.cherry_leaves": "Cherry Leaves",
   "block.deathcube.obsidian_manipulator": "Obsidian Manipulator",
 
-  "itemGroup.deathcube": "DeathCube"
+  "itemGroup.deathcube_misc": "DeathCube | Misc.",
+  "itemGroup.deathcube_tools": "DeathCube | Tools"
 }

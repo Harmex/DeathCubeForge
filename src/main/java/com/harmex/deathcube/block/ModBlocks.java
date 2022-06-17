@@ -7,7 +7,6 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -24,12 +23,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> OBSIDIAN_MANIPULATOR = registerBlock("obsidian_manipulator",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(9f)
-                    .requiresCorrectToolForDrops()), ModCreativeModeTab.DEATHCUBE_TAB);
+                    .requiresCorrectToolForDrops()), ModCreativeModeTab.DEATHCUBE_MISC_TAB);
 
     public static final RegistryObject<Block> CHERRY_LEAVES = registerBlock("cherry_leaves",
             () -> new Block(BlockBehaviour.Properties.of(Material.LEAVES)
                     .strength(1f)
-                    .requiresCorrectToolForDrops()), ModCreativeModeTab.DEATHCUBE_TAB);
+                    .requiresCorrectToolForDrops()), ModCreativeModeTab.DEATHCUBE_MISC_TAB);
 
     //Registering things
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block,
