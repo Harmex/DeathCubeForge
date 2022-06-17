@@ -1,8 +1,25 @@
 {
   "item.deathcube.totem_of_resurrection": "Totem de Résurréction",
 
+  "item.deathcube.copper_sword": "Épée en cuivre",
+  "item.deathcube.copper_pickaxe": "Pioche en cuivre",
+  "item.deathcube.copper_axe": "Hache en cuivre",
+  "item.deathcube.copper_shovel": "Pelle en cuivre",
+  "item.deathcube.copper_hoe": "Houe en cuivre",
+
+  "item.deathcube.emerald_sword": "Épée en émeraude",
+  "item.deathcube.emerald_pickaxe": "Pioche en émeraude",
+  "item.deathcube.emerald_axe": "Hache en émeraude",
+  "item.deathcube.emerald_shovel": "Pelle en émeraude",
+  "item.deathcube.emerald_hoe": "Houe en émeraude",
+
   "block.deathcube.cherry_leaves": "Feuilles de Cerisier",
   "block.deathcube.obsidian_manipulator": "Manipulateur d'Obsidienne",
 
-  "itemGroup.deathcube": "DeathCube"
+  "itemGroup.deathcube": "DeathCube",
+  "item.deathcube.emerald_sword": "Emerald Sword",
+  "item.deathcube.emerald_pickaxe": "Emerald Pickaxe",
+  "item.deathcube.emerald_axe": "Emerald Axe",
+  "item.deathcube.emerald_shovel": "Emerald Shovel",
+  "item.deathcube.emerald_hoe": "Emerald Hoe"
 }

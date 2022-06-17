@@ -1,6 +1,18 @@
 {
   "item.deathcube.totem_of_resurrection": "Totem of Resurrection",
 
+  "item.deathcube.copper_sword": "Copper Sword",
+  "item.deathcube.copper_pickaxe": "Copper Pickaxe",
+  "item.deathcube.copper_axe": "Copper Axe",
+  "item.deathcube.copper_shovel": "Copper Shovel",
+  "item.deathcube.copper_hoe": "Copper Hoe",
+
+  "item.deathcube.emerald_sword": "Emerald Sword",
+  "item.deathcube.emerald_pickaxe": "Emerald Pickaxe",
+  "item.deathcube.emerald_axe": "Emerald Axe",
+  "item.deathcube.emerald_shovel": "Emerald Shovel",
+  "item.deathcube.emerald_hoe": "Emerald Hoe",
+
   "block.deathcube.cherry_leaves": "Cherry Leaves",
   "block.deathcube.obsidian_manipulator": "Obsidian Manipulator",
 
