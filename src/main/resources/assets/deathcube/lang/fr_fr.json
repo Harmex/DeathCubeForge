@@ -1,18 +1,30 @@
 {
   "item.deathcube.totem_of_resurrection": "Totem de Résurréction",
 
+  "item.deathcube.copper_helmet": "Copper Casque en cuivre",
+  "item.deathcube.copper_chestplate": "Copper Plastron en cuivre",
+  "item.deathcube.copper_leggings": "Copper Jambières en cuivre",
+  "item.deathcube.copper_boots": "Copper Bottes en cuivre",
   "item.deathcube.copper_sword": "Épée en cuivre",
   "item.deathcube.copper_pickaxe": "Pioche en cuivre",
   "item.deathcube.copper_axe": "Hache en cuivre",
   "item.deathcube.copper_shovel": "Pelle en cuivre",
   "item.deathcube.copper_hoe": "Houe en cuivre",
 
+  "item.deathcube.emerald_helmet": "Casque en émeraude",
+  "item.deathcube.emerald_chestplate": "Plastron en émeraude",
+  "item.deathcube.emerald_leggings": "Jambières en émeraude",
+  "item.deathcube.emerald_boots": "Bottes en émeraude",
   "item.deathcube.emerald_sword": "Épée en émeraude",
   "item.deathcube.emerald_pickaxe": "Pioche en émeraude",
   "item.deathcube.emerald_axe": "Hache en émeraude",
   "item.deathcube.emerald_shovel": "Pelle en émeraude",
   "item.deathcube.emerald_hoe": "Houe en émeraude",
 
+  "item.deathcube.obsidian_helmet": "Casque en obsidienne",
+  "item.deathcube.obsidian_chestplate": "Plastron en obsidienne",
+  "item.deathcube.obsidian_leggings": "Jambières en obsidienne",
+  "item.deathcube.obsidian_boots": "Bottes en obsidienne",
   "item.deathcube.obsidian_sword": "Épée en obsidienne",
   "item.deathcube.obsidian_pickaxe": "Pioche en obsidienne",
   "item.deathcube.obsidian_axe": "Hache en obsidienne",
@@ -23,5 +35,5 @@
   "block.deathcube.obsidian_manipulator": "Manipulateur d'Obsidienne",
 
   "itemGroup.deathcube_misc": "DeathCube | Divers",
-  "itemGroup.deathcube_tools": "DeathCube | Outils"
+  "itemGroup.deathcube_tools": "DeathCube | Armures & Outils"
 }

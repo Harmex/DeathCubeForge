@@ -17,4 +17,11 @@ public class ModCreativeModeTab {
             return new ItemStack(ModItems.COPPER_AXE.get());
         }
     };
+
+    public static final CreativeModeTab DEATHCUBE_ARMOR_TAB = new CreativeModeTab("deathcube_armor") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ModItems.OBSIDIAN_CHESTPLATE.get());
+        }
+    };
 }

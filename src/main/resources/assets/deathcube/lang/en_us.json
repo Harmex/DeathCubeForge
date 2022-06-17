@@ -1,18 +1,30 @@
 {
   "item.deathcube.totem_of_resurrection": "Totem of Resurrection",
 
+  "item.deathcube.copper_helmet": "Copper Helmet",
+  "item.deathcube.copper_chestplate": "Copper Chestplate",
+  "item.deathcube.copper_leggings": "Copper Leggings",
+  "item.deathcube.copper_boots": "Copper Boots",
   "item.deathcube.copper_sword": "Copper Sword",
   "item.deathcube.copper_pickaxe": "Copper Pickaxe",
   "item.deathcube.copper_axe": "Copper Axe",
   "item.deathcube.copper_shovel": "Copper Shovel",
   "item.deathcube.copper_hoe": "Copper Hoe",
 
+  "item.deathcube.emerald_helmet": "Emerald Helmet",
+  "item.deathcube.emerald_chestplate": "Emerald Chestplate",
+  "item.deathcube.emerald_leggings": "Emerald Leggings",
+  "item.deathcube.emerald_boots": "Emerald Boots",
   "item.deathcube.emerald_sword": "Emerald Sword",
   "item.deathcube.emerald_pickaxe": "Emerald Pickaxe",
   "item.deathcube.emerald_axe": "Emerald Axe",
   "item.deathcube.emerald_shovel": "Emerald Shovel",
   "item.deathcube.emerald_hoe": "Emerald Hoe",
 
+  "item.deathcube.obsidian_helmet": "Obsidian Helmet",
+  "item.deathcube.obsidian_chestplate": "Obsidian Chestplate",
+  "item.deathcube.obsidian_leggings": "Obsidian Leggings",
+  "item.deathcube.obsidian_boots": "Obsidian Boots",
   "item.deathcube.obsidian_sword": "Obsidian Sword",
   "item.deathcube.obsidian_pickaxe": "Obsidian Pickaxe",
   "item.deathcube.obsidian_axe": "Obsidian Axe",
@@ -23,5 +35,5 @@
   "block.deathcube.obsidian_manipulator": "Obsidian Manipulator",
 
   "itemGroup.deathcube_misc": "DeathCube | Misc.",
-  "itemGroup.deathcube_tools": "DeathCube | Tools"
+  "itemGroup.deathcube_tools": "DeathCube | Armor & Tools"
 }
