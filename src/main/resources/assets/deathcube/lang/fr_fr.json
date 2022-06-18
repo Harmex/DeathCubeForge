@@ -1,5 +1,13 @@
 {
+  "item.deathcube.cherry": "Cerise",
+  "item.deathcube.fresh_water_bottle": "Bouteille d'eau potable",
+  "item.deathcube.diamond_apple": "Pomme en diamant",
+  "item.deathcube.netherite_apple": "Pomme en Netherite",
+  "item.deathcube.bedrock_apple": "Pomme en Bedrock",
+  "item.deathcube.time_gem_apple": "Pomme en Gemme du Temps",
+
   "item.deathcube.totem_of_resurrection": "Totem de Résurréction",
+  "item.deathcube.time_gem": "Gemme du Temps",
 
   "item.deathcube.copper_helmet": "Copper Casque en cuivre",
   "item.deathcube.copper_chestplate": "Copper Plastron en cuivre",
@@ -32,8 +40,12 @@
   "item.deathcube.obsidian_hoe": "Houe en obsidienne",
 
   "block.deathcube.cherry_leaves": "Feuilles de Cerisier",
-  "block.deathcube.obsidian_manipulator": "Manipulateur d'Obsidienne",
+  "block.deathcube.matter_manipulator": "Manipulateur de Matière",
 
-  "itemGroup.deathcube_misc": "DeathCube | Divers",
-  "itemGroup.deathcube_tools": "DeathCube | Armures & Outils"
+  "container.deathcube.matter_manipulator": "Matter Manipulator",
+
+  "itemGroup.deathcube.misc": "DeathCube | Divers",
+  "itemGroup.deathcube.food": "DeathCube | Nourritures",
+  "itemGroup.deathcube.tools": "DeathCube | Outils",
+  "itemGroup.deathcube.armor": "DeathCube | Armures"
 }

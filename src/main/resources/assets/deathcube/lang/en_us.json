@@ -1,5 +1,13 @@
 {
+  "item.deathcube.cherry": "Cherry",
+  "item.deathcube.fresh_water_bottle": "Fresh Water Bottle",
+  "item.deathcube.diamond_apple": "Diamond Apple",
+  "item.deathcube.netherite_apple": "Netherite Apple",
+  "item.deathcube.bedrock_apple": "Bedrock Apple",
+  "item.deathcube.time_gem_apple": "Time Gem Apple",
+
   "item.deathcube.totem_of_resurrection": "Totem of Resurrection",
+  "item.deathcube.time_gem": "Time Gem",
 
   "item.deathcube.copper_helmet": "Copper Helmet",
   "item.deathcube.copper_chestplate": "Copper Chestplate",
@@ -32,8 +40,12 @@
   "item.deathcube.obsidian_hoe": "Obsidian Hoe",
 
   "block.deathcube.cherry_leaves": "Cherry Leaves",
-  "block.deathcube.obsidian_manipulator": "Obsidian Manipulator",
+  "block.deathcube.matter_manipulator": "Matter Manipulator",
 
-  "itemGroup.deathcube_misc": "DeathCube | Misc.",
-  "itemGroup.deathcube_tools": "DeathCube | Armor & Tools"
+  "container.deathcube.matter_manipulator": "Matter Manipulator",
+
+  "itemGroup.deathcube.misc": "DeathCube | Misc.",
+  "itemGroup.deathcube.food": "DeathCube | Foods",
+  "itemGroup.deathcube.tools": "DeathCube | Tools",
+  "itemGroup.deathcube.armor": "DeathCube | Armor"
 }

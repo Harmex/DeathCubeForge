@@ -4,21 +4,28 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
 public class ModCreativeModeTab {
-    public static final CreativeModeTab DEATHCUBE_MISC_TAB = new CreativeModeTab("deathcube_misc") {
+    public static final CreativeModeTab DEATHCUBE_MISC_TAB = new CreativeModeTab("deathcube.misc") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(ModItems.TOTEM_OF_RESURRECTION.get());
         }
     };
 
-    public static final CreativeModeTab DEATHCUBE_TOOLS_TAB = new CreativeModeTab("deathcube_tools") {
+    public static final CreativeModeTab DEATHCUBE_FOOD_TAB = new CreativeModeTab("deathcube.food") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ModItems.CHERRY.get());
+        }
+    };
+
+    public static final CreativeModeTab DEATHCUBE_TOOLS_TAB = new CreativeModeTab("deathcube.tools") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(ModItems.COPPER_AXE.get());
         }
     };
 
-    public static final CreativeModeTab DEATHCUBE_ARMOR_TAB = new CreativeModeTab("deathcube_armor") {
+    public static final CreativeModeTab DEATHCUBE_ARMOR_TAB = new CreativeModeTab("deathcube.armor") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(ModItems.OBSIDIAN_CHESTPLATE.get());
