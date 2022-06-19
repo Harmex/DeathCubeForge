@@ -40,12 +40,20 @@
   "item.deathcube.obsidian_hoe": "Houe en obsidienne",
 
   "block.deathcube.cherry_leaves": "Feuilles de Cerisier",
+  "block.deathcube.cherry_sapling": "Cherry Sapling",
+  "block.deathcube.cherry_log": "Cherry Log",
+  "block.deathcube.stripped_cherry_log": "Stripped Cherry Log",
+  "block.deathcube.cherry_wood": "Cherry Wood",
+  "block.deathcube.stripped_cherry_wood": "Stripped Cherry Wood",
+  "block.deathcube.cherry_planks": "Cherry Planks",
+
   "block.deathcube.matter_manipulator": "Manipulateur de Matière",
 
-  "container.deathcube.matter_manipulator": "Matter Manipulator",
+  "container.deathcube.matter_manipulator": "Manipulateur de Matière",
 
   "itemGroup.deathcube.misc": "DeathCube | Divers",
-  "itemGroup.deathcube.food": "DeathCube | Nourritures",
+  "itemGroup.deathcube.blocks": "DeathCube | Blocs",
+  "itemGroup.deathcube.foods": "DeathCube | Nourritures",
   "itemGroup.deathcube.tools": "DeathCube | Outils",
-  "itemGroup.deathcube.armor": "DeathCube | Armures"
+  "itemGroup.deathcube.armors": "DeathCube | Armures"
 }

@@ -3,11 +3,14 @@ package com.harmex.deathcube;
 import com.harmex.deathcube.block.ModBlocks;
 import com.harmex.deathcube.block.entity.ModBlockEntities;
 import com.harmex.deathcube.item.ModItems;
+import com.harmex.deathcube.recipe.ModRecipes;
 import com.harmex.deathcube.screen.MatterManipulatorScreen;
 import com.harmex.deathcube.screen.ModMenuTypes;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -30,6 +33,7 @@ public class DeathCube {
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
@@ -43,5 +47,8 @@ public class DeathCube {
 
     private void clientSetup(final FMLClientSetupEvent event) {
         MenuScreens.register(ModMenuTypes.MATTER_MANIPULATOR_MENU.get(), MatterManipulatorScreen::new);
+
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_LEAVES.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_SAPLING.get(), RenderType.cutout());
     }
 }

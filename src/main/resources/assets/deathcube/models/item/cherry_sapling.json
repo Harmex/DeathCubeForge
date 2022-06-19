@@ -1,0 +1,6 @@
+{
+  "parent": "deathcube:item/generated",
+  "textures": {
+    "layer0": "deathcube:block/cherry_sapling"
+  }
+}
