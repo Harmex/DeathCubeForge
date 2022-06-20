@@ -47,7 +47,7 @@ public class ModItems {
                     ));
     public static final RegistryObject<Item> TIME_GEM_APPLE =
             ITEMS.register("time_gem_apple",
-                    () -> new Item(new Item.Properties()
+                    () -> new ChorusFruitItem(new Item.Properties()
                             .tab(ModCreativeModeTab.DEATHCUBE_FOOD_TAB)
                             .food(ModFoods.TIME_GEM_APPLE)
                             .rarity(Rarity.UNCOMMON)
