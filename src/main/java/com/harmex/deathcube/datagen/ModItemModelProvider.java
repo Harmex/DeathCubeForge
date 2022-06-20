@@ -1,10 +1,13 @@
 package com.harmex.deathcube.datagen;
 
 import com.harmex.deathcube.DeathCube;
+import com.harmex.deathcube.block.ModBlocks;
 import com.harmex.deathcube.item.ModItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -20,6 +23,14 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        blockItem(ModBlocks.MATTER_MANIPULATOR.get());
+        plantItem(ModBlocks.CHERRY_SAPLING.get());
+        blockItem(ModBlocks.CHERRY_LEAVES.get());
+        blockItem(ModBlocks.CHERRY_LOG.get());
+        blockItem(ModBlocks.CHERRY_WOOD.get());
+        blockItem(ModBlocks.STRIPPED_CHERRY_LOG.get());
+        blockItem(ModBlocks.STRIPPED_CHERRY_WOOD.get());
+
         basicItem(ModItems.FRESH_WATER_BOTTLE.get());
         basicItem(ModItems.CHERRY.get());
         basicItem(ModItems.TIME_GEM_APPLE.get());
@@ -68,5 +79,24 @@ public class ModItemModelProvider extends ItemModelProvider {
         return getBuilder(item.toString())
                 .parent(new ModelFile.UncheckedModelFile("item/handheld"))
                 .texture("layer0", new ResourceLocation(item.getNamespace(), "item/" + item.getPath()));
+    }
+
+    private ItemModelBuilder plantItem(Block block) {
+        return plantItem(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)));
+    }
+
+    public ItemModelBuilder plantItem(ResourceLocation block) {
+        return getBuilder(block.getPath())
+                .parent(new ModelFile.UncheckedModelFile("item/generated"))
+                .texture("layer0", new ResourceLocation(block.getNamespace(), "block/" + block.getPath()));
+    }
+
+    private ItemModelBuilder blockItem(Block block) {
+        return blockItem(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)));
+    }
+
+    public ItemModelBuilder blockItem(ResourceLocation block) {
+        return getBuilder(block.getPath())
+                .parent(new ModelFile.UncheckedModelFile(block.getNamespace() + ":block/" + block.getPath()));
     }
 }

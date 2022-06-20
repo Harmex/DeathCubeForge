@@ -46,22 +46,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CHERRY_LEAVES = registerBlock("cherry_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
-            ) {
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
-
-                @Override
-                public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-                    return 60;
-                }
-
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-                    return 30;
-                }
-            }, ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB);
+            ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB);
 
     public static final RegistryObject<Block> CHERRY_LOG = registerBlock("cherry_log",
             () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
@@ -80,23 +65,8 @@ public class ModBlocks {
             ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB);
 
     public static final RegistryObject<Block> CHERRY_PLANKS = registerBlock("cherry_planks",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
-            ) {
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-                    return true;
-                }
-
-                @Override
-                public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-                    return 20;
-                }
-
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
-                    return 5;
-                }
-            }, ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB);
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
+            ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB);
     //endregion
 
     //Registering things

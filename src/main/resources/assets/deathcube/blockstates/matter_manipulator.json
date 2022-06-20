@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "deathcube:block/matter_manipulator" }
+    "": {
+      "model": "deathcube:block/matter_manipulator"
+    }
   }
 }

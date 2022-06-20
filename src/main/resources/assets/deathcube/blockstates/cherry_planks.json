@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "deathcube:block/cherry_planks" }
+    "": {
+      "model": "deathcube:block/cherry_planks"
+    }
   }
 }

@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "deathcube:block/potted_cherry_sapling" }
+    "": {
+      "model": "deathcube:block/potted_cherry_sapling"
+    }
   }
 }

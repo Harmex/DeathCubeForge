@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "deathcube:block/cherry_leaves"
+    "all": "deathcube:block/matter_manipulator"
   }
 }
