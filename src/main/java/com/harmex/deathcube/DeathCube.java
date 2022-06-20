@@ -3,6 +3,7 @@ package com.harmex.deathcube;
 import com.harmex.deathcube.block.ModBlocks;
 import com.harmex.deathcube.block.entity.ModBlockEntities;
 import com.harmex.deathcube.item.ModItems;
+import com.harmex.deathcube.painting.ModPaintings;
 import com.harmex.deathcube.recipe.ModRecipes;
 import com.harmex.deathcube.screen.MatterManipulatorScreen;
 import com.harmex.deathcube.screen.ModMenuTypes;
@@ -32,6 +33,9 @@ public class DeathCube {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+
+        ModPaintings.register(modEventBus);
+
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
