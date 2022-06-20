@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
+  "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "deathcube:item/armor/emerald_leggings"
+    "layer0": "deathcube:item/emerald_leggings"
   }
 }

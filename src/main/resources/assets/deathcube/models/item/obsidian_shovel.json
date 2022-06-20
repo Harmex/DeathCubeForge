@@ -1,6 +1,6 @@
 {
-  "parent": "item/handheld",
+  "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "deathcube:item/tools/obsidian_shovel"
+    "layer0": "deathcube:item/obsidian_shovel"
   }
 }
