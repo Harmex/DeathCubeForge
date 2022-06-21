@@ -1,18 +1,37 @@
 {
-  "item.deathcube.cherry": "Cerise",
   "item.deathcube.fresh_water_bottle": "Bouteille d'eau potable",
+  "item.deathcube.cherry": "Cerise",
+
+  "item.deathcube.time_gem_apple": "Pomme en Gemme du Temps",
   "item.deathcube.diamond_apple": "Pomme en diamant",
   "item.deathcube.netherite_apple": "Pomme en Netherite",
   "item.deathcube.bedrock_apple": "Pomme en Bedrock",
-  "item.deathcube.time_gem_apple": "Pomme en Gemme du Temps",
 
-  "item.deathcube.totem_of_resurrection": "Totem de Résurréction",
   "item.deathcube.time_gem": "Gemme du Temps",
 
-  "item.deathcube.copper_helmet": "Copper Casque en cuivre",
-  "item.deathcube.copper_chestplate": "Copper Plastron en cuivre",
-  "item.deathcube.copper_leggings": "Copper Jambières en cuivre",
-  "item.deathcube.copper_boots": "Copper Bottes en cuivre",
+  "item.deathcube.totem_of_resurrection": "Totem de Résurréction",
+  "item.deathcube.time_wand": "Baguette du Temps",
+  "item.deathcube.ender_bag": "Sac de l'Ender",
+
+  "item.deathcube.oak_helmet": "Casque en Chêne",
+  "item.deathcube.oak_chestplate": "Plastron en Chêne",
+  "item.deathcube.oak_leggings": "Jambières en Chêne",
+  "item.deathcube.oak_boots": "Bottes en Chêne",
+
+  "item.deathcube.bone_helmet": "Casque en Os",
+  "item.deathcube.bone_chestplate": "Palstron en Os",
+  "item.deathcube.bone_leggings": "Jambières en Os",
+  "item.deathcube.bone_boots": "Bottes en Os",
+  "item.deathcube.bone_sword": "Épée en Os",
+  "item.deathcube.bone_pickaxe": "Pioche en Os",
+  "item.deathcube.bone_axe": "Hache en Os",
+  "item.deathcube.bone_shovel": "Pelle en Os",
+  "item.deathcube.bone_hoe": "Houe en Os",
+
+  "item.deathcube.copper_helmet": "Casque en cuivre",
+  "item.deathcube.copper_chestplate": "Plastron en cuivre",
+  "item.deathcube.copper_leggings": "Jambières en cuivre",
+  "item.deathcube.copper_boots": "Bottes en cuivre",
   "item.deathcube.copper_sword": "Épée en cuivre",
   "item.deathcube.copper_pickaxe": "Pioche en cuivre",
   "item.deathcube.copper_axe": "Hache en cuivre",
@@ -40,12 +59,12 @@
   "item.deathcube.obsidian_hoe": "Houe en obsidienne",
 
   "block.deathcube.cherry_leaves": "Feuilles de Cerisier",
-  "block.deathcube.cherry_sapling": "Cherry Sapling",
-  "block.deathcube.cherry_log": "Cherry Log",
-  "block.deathcube.stripped_cherry_log": "Stripped Cherry Log",
-  "block.deathcube.cherry_wood": "Cherry Wood",
-  "block.deathcube.stripped_cherry_wood": "Stripped Cherry Wood",
-  "block.deathcube.cherry_planks": "Cherry Planks",
+  "block.deathcube.cherry_sapling": "Pousse de Cerisier",
+  "block.deathcube.cherry_log": "Bûche de Cerisier",
+  "block.deathcube.stripped_cherry_log": "Bûche de Cerisier Écorcé",
+  "block.deathcube.cherry_wood": "Bois de Cerisier",
+  "block.deathcube.stripped_cherry_wood": "Bois de Cerisier Écorcé",
+  "block.deathcube.cherry_planks": "Planches de Cerisier",
 
   "block.deathcube.matter_manipulator": "Manipulateur de Matière",
 
@@ -55,5 +74,8 @@
   "itemGroup.deathcube.blocks": "DeathCube | Blocs",
   "itemGroup.deathcube.foods": "DeathCube | Nourritures",
   "itemGroup.deathcube.tools": "DeathCube | Outils",
-  "itemGroup.deathcube.armors": "DeathCube | Armures"
+  "itemGroup.deathcube.armors": "DeathCube | Armures",
+
+  "tooltip.deathcube.shift": "§7-Maintenez §6Shift §7pour plus d'info-",
+  "tooltip.deathcube.tor.0": "§2§l|§r §7À utiliser dans la §3§lTable de Résurrection§r"
 }

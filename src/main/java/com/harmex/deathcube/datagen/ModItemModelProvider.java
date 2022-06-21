@@ -7,7 +7,6 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -39,6 +38,24 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.BEDROCK_APPLE.get());
         basicItem(ModItems.TOTEM_OF_RESURRECTION.get());
         basicItem(ModItems.TIME_GEM.get());
+        basicItem(ModItems.TIME_WAND.get());
+        basicItem(ModItems.ENDER_BAG.get());
+
+
+        basicItem(ModItems.OAK_HELMET.get());
+        basicItem(ModItems.OAK_CHESTPLATE.get());
+        basicItem(ModItems.OAK_LEGGINGS.get());
+        basicItem(ModItems.OAK_BOOTS.get());
+
+        basicItem(ModItems.BONE_HELMET.get());
+        basicItem(ModItems.BONE_CHESTPLATE.get());
+        basicItem(ModItems.BONE_LEGGINGS.get());
+        basicItem(ModItems.BONE_BOOTS.get());
+        handheldItem(ModItems.BONE_SWORD.get());
+        handheldItem(ModItems.BONE_PICKAXE.get());
+        handheldItem(ModItems.BONE_AXE.get());
+        handheldItem(ModItems.BONE_SHOVEL.get());
+        handheldItem(ModItems.BONE_HOE.get());
 
         basicItem(ModItems.COPPER_HELMET.get());
         basicItem(ModItems.COPPER_CHESTPLATE.get());

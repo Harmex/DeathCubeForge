@@ -1,5 +1,9 @@
 package com.harmex.deathcube.world.gen;
 
-public class ModTreeGeneration {
+import net.minecraftforge.common.world.ForgeBiomeModifiers;
 
+public class ModTreeGeneration {
+    public static void generateTrees() {
+
+    }
 }

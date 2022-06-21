@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_emerald": {
+    "has_obsidian": {
       "conditions": {
         "items": [
           {
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_emerald",
+      "has_obsidian",
       "has_the_recipe"
     ]
   ],

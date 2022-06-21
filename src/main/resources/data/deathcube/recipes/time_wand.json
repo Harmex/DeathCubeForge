@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "E": {
+      "item": "minecraft:emerald"
+    },
+    "T": {
+      "item": "deathcube:time_gem"
+    }
+  },
+  "pattern": [
+    "DTD",
+    " # ",
+    " E "
+  ],
+  "result": {
+    "item": "deathcube:time_wand"
+  }
+}

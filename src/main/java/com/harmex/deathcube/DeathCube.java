@@ -4,6 +4,7 @@ import com.harmex.deathcube.block.ModBlocks;
 import com.harmex.deathcube.block.entity.ModBlockEntities;
 import com.harmex.deathcube.item.ModItems;
 import com.harmex.deathcube.painting.ModPaintings;
+import com.harmex.deathcube.potion.ModPotions;
 import com.harmex.deathcube.recipe.ModRecipes;
 import com.harmex.deathcube.screen.MatterManipulatorScreen;
 import com.harmex.deathcube.screen.ModMenuTypes;
@@ -12,9 +13,11 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -40,6 +43,8 @@ public class DeathCube {
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
+
+        ModPotions.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);

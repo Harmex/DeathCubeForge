@@ -1,13 +1,32 @@
 {
-  "item.deathcube.cherry": "Cherry",
   "item.deathcube.fresh_water_bottle": "Fresh Water Bottle",
+  "item.deathcube.cherry": "Cherry",
+
+  "item.deathcube.time_gem_apple": "Time Gem Apple",
   "item.deathcube.diamond_apple": "Diamond Apple",
   "item.deathcube.netherite_apple": "Netherite Apple",
   "item.deathcube.bedrock_apple": "Bedrock Apple",
-  "item.deathcube.time_gem_apple": "Time Gem Apple",
+
+  "item.deathcube.time_gem": "Time Gem",
 
   "item.deathcube.totem_of_resurrection": "Totem of Resurrection",
-  "item.deathcube.time_gem": "Time Gem",
+  "item.deathcube.time_wand": "Time Wand",
+  "item.deathcube.ender_bag": "Ender Bag",
+
+  "item.deathcube.oak_helmet": "Oak Helmet",
+  "item.deathcube.oak_chestplate": "Oak Chestplate",
+  "item.deathcube.oak_leggings": "Oak Leggings",
+  "item.deathcube.oak_boots": "Oak Boots",
+
+  "item.deathcube.bone_helmet": "Bone Helmet",
+  "item.deathcube.bone_chestplate": "Bone Chestplate",
+  "item.deathcube.bone_leggings": "Bone Leggings",
+  "item.deathcube.bone_boots": "Bone Boots",
+  "item.deathcube.bone_sword": "Bone Sword",
+  "item.deathcube.bone_pickaxe": "Bone Pickaxe",
+  "item.deathcube.bone_axe": "Bone Axe",
+  "item.deathcube.bone_shovel": "Bone Shovel",
+  "item.deathcube.bone_hoe": "Bone Hoe",
 
   "item.deathcube.copper_helmet": "Copper Helmet",
   "item.deathcube.copper_chestplate": "Copper Chestplate",
@@ -55,5 +74,8 @@
   "itemGroup.deathcube.blocks": "DeathCube | Blocks",
   "itemGroup.deathcube.foods": "DeathCube | Foods",
   "itemGroup.deathcube.tools": "DeathCube | Tools",
-  "itemGroup.deathcube.armors": "DeathCube | Armors"
+  "itemGroup.deathcube.armors": "DeathCube | Armors",
+
+  "tooltip.deathcube.shift": "§7-Hold §6Shift §7for more info-",
+  "tooltip.deathcube.tor.0": "§2§l|§r §7Use it in the §3§lResurrection Table§r"
 }
