@@ -13,7 +13,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    LOG("log", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_LEATHER,
+    OAK("oak", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_LEATHER,
             0.0F, 0.0F, () -> Ingredient.of(ItemTags.LOGS)
     ),
     BONE("bone", 5, new int[]{1, 3, 4, 2}, 15, SoundEvents.ARMOR_EQUIP_LEATHER,
@@ -25,8 +25,8 @@ public enum ModArmorMaterials implements ArmorMaterial {
     EMERALD("emerald", 28, new int[]{2, 6, 7, 3}, 20, SoundEvents.ARMOR_EQUIP_DIAMOND,
             2.0F, 0.0F, () -> Ingredient.of(Items.EMERALD)
     ),
-    OBSIDIAN("obsidian", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE,
-            3.0F, 0.1F, () -> Ingredient.of(Items.OBSIDIAN)
+    OBSIDIAN("obsidian", 38, new int[]{4, 7, 9, 4}, 17, SoundEvents.ARMOR_EQUIP_NETHERITE,
+            3.5F, 0.15F, () -> Ingredient.of(Items.OBSIDIAN)
     );
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};

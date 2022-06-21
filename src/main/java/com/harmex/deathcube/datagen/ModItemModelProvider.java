@@ -30,6 +30,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.STRIPPED_CHERRY_LOG.get());
         blockItem(ModBlocks.STRIPPED_CHERRY_WOOD.get());
 
+        basicItem(ModItems.ENDER_DRAGON_SCALE.get());
+        basicItem(ModItems.WARDEN_HEART.get());
         basicItem(ModItems.FRESH_WATER_BOTTLE.get());
         basicItem(ModItems.CHERRY.get());
         basicItem(ModItems.TIME_GEM_APPLE.get());
@@ -38,7 +40,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.BEDROCK_APPLE.get());
         basicItem(ModItems.TOTEM_OF_RESURRECTION.get());
         basicItem(ModItems.TIME_GEM.get());
-        basicItem(ModItems.TIME_WAND.get());
+        handheldItem(ModItems.TIME_WAND.get());
         basicItem(ModItems.ENDER_BAG.get());
 
 

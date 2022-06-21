@@ -1,6 +1,7 @@
 package com.harmex.deathcube.item.custom;
 
 import com.harmex.deathcube.item.ModCreativeModeTab;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.contents.TranslatableContents;
@@ -26,9 +27,9 @@ public class TotemOfResurrectionItem extends Item {
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         if (!Screen.hasShiftDown()){
-            pTooltipComponents.add(Component.translatable("tooltip.deathcube.shift"));
+            pTooltipComponents.add(Component.translatable("tooltip.deathcube.shift").withStyle(ChatFormatting.GRAY));
         } else {
-            pTooltipComponents.add(Component.translatable("tooltip.deathcube.tor.0"));
+            pTooltipComponents.add(Component.translatable("tooltip.deathcube.tor.0").withStyle(ChatFormatting.GRAY));
         }
     }
 }

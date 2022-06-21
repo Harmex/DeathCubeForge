@@ -8,6 +8,8 @@
   "item.deathcube.bedrock_apple": "Bedrock Apple",
 
   "item.deathcube.time_gem": "Time Gem",
+  "item.deathcube.ender_dragon_scale": "Ender Dragon Scale",
+  "item.deathcube.warden_heart": "Warden Heart",
 
   "item.deathcube.totem_of_resurrection": "Totem of Resurrection",
   "item.deathcube.time_wand": "Time Wand",
@@ -76,6 +78,14 @@
   "itemGroup.deathcube.tools": "DeathCube | Tools",
   "itemGroup.deathcube.armors": "DeathCube | Armors",
 
-  "tooltip.deathcube.shift": "§7-Hold §6Shift §7for more info-",
-  "tooltip.deathcube.tor.0": "§2§l|§r §7Use it in the §3§lResurrection Table§r"
+  "tooltip.deathcube.shift": "Hold Shift for more info-",
+  "tooltip.deathcube.tor.0": "Use it in the Resurrection Table",
+
+  "tooltip.deathcube.time_wand.saved_pos": "Saved Position :",
+
+  "tooltip.deathcube.full_armor": "Full Armor Effect :",
+
+  "tooltip.deathcube.full_armor.emerald": " - Hero Of The Village",
+
+  "tooltip.deathcube.full_armor.obsidian": " - Fire Resistance"
 }

@@ -1,9 +1,7 @@
 package com.harmex.deathcube.item;
 
 import com.harmex.deathcube.DeathCube;
-import com.harmex.deathcube.item.custom.EnderBagItem;
-import com.harmex.deathcube.item.custom.TimeWandItem;
-import com.harmex.deathcube.item.custom.TotemOfResurrectionItem;
+import com.harmex.deathcube.item.custom.*;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -66,21 +64,33 @@ public class ModItems {
                             .tab(ModCreativeModeTab.DEATHCUBE_MISC_TAB)
                             .rarity(Rarity.UNCOMMON)
                     ));
+    public static final RegistryObject<Item> ENDER_DRAGON_SCALE =
+            ITEMS.register("ender_dragon_scale",
+                    () -> new Item(new Item.Properties()
+                            .tab(ModCreativeModeTab.DEATHCUBE_MISC_TAB)
+                            .rarity(Rarity.UNCOMMON)
+                    ));
+    public static final RegistryObject<Item> WARDEN_HEART =
+            ITEMS.register("warden_heart",
+                    () -> new Item(new Item.Properties()
+                            .tab(ModCreativeModeTab.DEATHCUBE_MISC_TAB)
+                            .rarity(Rarity.UNCOMMON)
+                    ));
     //endregion
 
     //region Log Armors
     //Oak
     public static final RegistryObject<Item> OAK_HELMET = ITEMS.register("oak_helmet",
-            () -> new ArmorItem(ModArmorMaterials.LOG, EquipmentSlot.HEAD, new Item.Properties()
+            () -> new ArmorItem(ModArmorMaterials.OAK, EquipmentSlot.HEAD, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
     public static final RegistryObject<Item> OAK_CHESTPLATE = ITEMS.register("oak_chestplate",
-            () -> new ArmorItem(ModArmorMaterials.LOG, EquipmentSlot.CHEST, new Item.Properties()
+            () -> new ArmorItem(ModArmorMaterials.OAK, EquipmentSlot.CHEST, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
     public static final RegistryObject<Item> OAK_LEGGINGS = ITEMS.register("oak_leggings",
-            () -> new ArmorItem(ModArmorMaterials.LOG, EquipmentSlot.LEGS, new Item.Properties()
+            () -> new ArmorItem(ModArmorMaterials.OAK, EquipmentSlot.LEGS, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
     public static final RegistryObject<Item> OAK_BOOTS = ITEMS.register("oak_boots",
-            () -> new ArmorItem(ModArmorMaterials.LOG, EquipmentSlot.FEET, new Item.Properties()
+            () -> new ArmorItem(ModArmorMaterials.OAK, EquipmentSlot.FEET, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
     //endregion
     
@@ -151,17 +161,13 @@ public class ModItems {
     //region Emerald
     //Emerald Armor
     public static final RegistryObject<Item> EMERALD_HELMET = ITEMS.register("emerald_helmet",
-            () -> new ArmorItem(ModArmorMaterials.EMERALD, EquipmentSlot.HEAD, new Item.Properties()
-                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+            () -> new EmeraldArmorItem(EquipmentSlot.HEAD));
     public static final RegistryObject<Item> EMERALD_CHESTPLATE = ITEMS.register("emerald_chestplate",
-            () -> new ArmorItem(ModArmorMaterials.EMERALD, EquipmentSlot.CHEST, new Item.Properties()
-                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+            () -> new EmeraldArmorItem(EquipmentSlot.CHEST));
     public static final RegistryObject<Item> EMERALD_LEGGINGS = ITEMS.register("emerald_leggings",
-            () -> new ArmorItem(ModArmorMaterials.EMERALD, EquipmentSlot.LEGS, new Item.Properties()
-                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+            () -> new EmeraldArmorItem(EquipmentSlot.LEGS));
     public static final RegistryObject<Item> EMERALD_BOOTS = ITEMS.register("emerald_boots",
-            () -> new ArmorItem(ModArmorMaterials.EMERALD, EquipmentSlot.FEET, new Item.Properties()
-                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+            () -> new EmeraldArmorItem(EquipmentSlot.FEET));
     //Emerald Tools
     public static final RegistryObject<Item> EMERALD_SWORD = ITEMS.register("emerald_sword",
             () -> new SwordItem(ModTiers.EMERALD, 3, -2.4f, new Item.Properties()
@@ -183,17 +189,13 @@ public class ModItems {
     //region Obsidian
     //Obsidian Armor
     public static final RegistryObject<Item> OBSIDIAN_HELMET = ITEMS.register("obsidian_helmet",
-            () -> new ArmorItem(ModArmorMaterials.OBSIDIAN, EquipmentSlot.HEAD, new Item.Properties()
-                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+            () -> new ObsidianArmorItem(EquipmentSlot.HEAD));
     public static final RegistryObject<Item> OBSIDIAN_CHESTPLATE = ITEMS.register("obsidian_chestplate",
-            () -> new ArmorItem(ModArmorMaterials.OBSIDIAN, EquipmentSlot.CHEST, new Item.Properties()
-                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+            () -> new ObsidianArmorItem(EquipmentSlot.CHEST));
     public static final RegistryObject<Item> OBSIDIAN_LEGGINGS = ITEMS.register("obsidian_leggings",
-            () -> new ArmorItem(ModArmorMaterials.OBSIDIAN, EquipmentSlot.LEGS, new Item.Properties()
-                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+            () -> new ObsidianArmorItem(EquipmentSlot.LEGS));
     public static final RegistryObject<Item> OBSIDIAN_BOOTS = ITEMS.register("obsidian_boots",
-            () -> new ArmorItem(ModArmorMaterials.OBSIDIAN, EquipmentSlot.FEET, new Item.Properties()
-                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+            () -> new ObsidianArmorItem(EquipmentSlot.FEET));
     //Obsidian Tools
     public static final RegistryObject<Item> OBSIDIAN_SWORD = ITEMS.register("obsidian_sword",
             () -> new SwordItem(ModTiers.OBSIDIAN, 3, -2.4f, new Item.Properties()

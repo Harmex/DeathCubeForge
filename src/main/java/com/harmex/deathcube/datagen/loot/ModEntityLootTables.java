@@ -1,4 +1,10 @@
 package com.harmex.deathcube.datagen.loot;
 
-public class ModEntityLootTables {
+import net.minecraft.data.loot.EntityLoot;
+
+public class ModEntityLootTables extends EntityLoot {
+    @Override
+    protected void addTables() {
+        //this.add();
+    }
 }
