@@ -5,6 +5,10 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.contents.TranslatableContents;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
@@ -31,5 +35,12 @@ public class TotemOfResurrectionItem extends Item {
         } else {
             pTooltipComponents.add(Component.translatable("tooltip.deathcube.tor.0").withStyle(ChatFormatting.GRAY));
         }
+    }
+
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+        pPlayer.getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0);
+        pPlayer.setHealth(20.0f);
+        return InteractionResultHolder.success(pPlayer.getItemInHand(pUsedHand));
     }
 }

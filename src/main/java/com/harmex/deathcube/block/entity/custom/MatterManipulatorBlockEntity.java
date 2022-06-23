@@ -1,25 +1,21 @@
 package com.harmex.deathcube.block.entity.custom;
 
+import com.google.gson.JsonSyntaxException;
 import com.harmex.deathcube.block.entity.ModBlockEntities;
-import com.harmex.deathcube.item.ModItems;
+import com.harmex.deathcube.recipe.ShapedMatterManipulationRecipe;
 import com.harmex.deathcube.screen.MatterManipulatorMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.Containers;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.alchemy.PotionUtils;
-import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
@@ -29,31 +25,64 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Random;
+import java.util.Optional;
 
 public class MatterManipulatorBlockEntity extends BlockEntity implements MenuProvider {
-    public final ItemStackHandler itemHandler = new ItemStackHandler(4) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(11) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
         }
     };
-
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
+
+    protected final ContainerData dataAccess = new ContainerData() {
+        @Override
+        public int get(int pIndex) {
+            switch (pIndex) {
+                case 0:
+                    return MatterManipulatorBlockEntity.this.manipulationProgress;
+                case 1:
+                    return MatterManipulatorBlockEntity.this.manipulationTimeTotal;
+                default:
+                    return 0;
+            }
+        }
+
+        @Override
+        public void set(int pIndex, int pValue) {
+            switch (pIndex) {
+                case 0:
+                    MatterManipulatorBlockEntity.this.manipulationProgress = pValue;
+                    break;
+                case 1:
+                    MatterManipulatorBlockEntity.this.manipulationTimeTotal = pValue;
+                    break;
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
+    };
+    int manipulationProgress;
+    int manipulationTimeTotal;
 
     public MatterManipulatorBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(ModBlockEntities.MATTER_MANIPULATOR_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        this.manipulationProgress = 0;
+        this.manipulationTimeTotal = 50;
     }
 
     @Override
-    public Component getDisplayName() {
+    public @NotNull Component getDisplayName() {
         return Component.translatable("container.deathcube.matter_manipulator");
     }
 
-    @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new MatterManipulatorMenu(pContainerId, pInventory, this);
+        return new MatterManipulatorMenu(pContainerId, pInventory, this, this.dataAccess);
     }
 
     @Override
@@ -80,6 +109,8 @@ public class MatterManipulatorBlockEntity extends BlockEntity implements MenuPro
     @Override
     protected void saveAdditional(CompoundTag pTag) {
         pTag.put("inventory", itemHandler.serializeNBT());
+        pTag.putInt("ManipulationTime", this.manipulationProgress);
+        pTag.putInt("ManipulationTimeTotal", this.manipulationTimeTotal);
         super.saveAdditional(pTag);
     }
 
@@ -87,6 +118,8 @@ public class MatterManipulatorBlockEntity extends BlockEntity implements MenuPro
     public void load(CompoundTag pTag) {
         super.load(pTag);
         itemHandler.deserializeNBT(pTag.getCompound("inventory"));
+        manipulationProgress = pTag.getInt("ManipulationTime");
+        manipulationTimeTotal = pTag.getInt("ManipulationTimeTotal");
     }
 
     public void drops() {
@@ -99,28 +132,80 @@ public class MatterManipulatorBlockEntity extends BlockEntity implements MenuPro
     }
 
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState, MatterManipulatorBlockEntity pBlockEntity) {
-        if(hasRecipe(pBlockEntity) && hasNotReachedStackLimit(pBlockEntity)) {
-            craftItem(pBlockEntity);
+        if(hasRecipe(pBlockEntity)) {
+            pBlockEntity.manipulationProgress++;
+            setChanged(pLevel, pPos, pState);
+            if(pBlockEntity.manipulationProgress > pBlockEntity.manipulationTimeTotal) {
+                craftItem(pBlockEntity);
+            }
+        } else {
+            pBlockEntity.resetProgress();
+            setChanged(pLevel, pPos, pState);
         }
     }
 
-    private static void craftItem(MatterManipulatorBlockEntity entity) {
-        entity.itemHandler.extractItem(0, 1, false);
-        entity.itemHandler.extractItem(1, 1, false);
+    private static boolean hasRecipe(MatterManipulatorBlockEntity pBlockEntity) {
+        Level level = pBlockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(pBlockEntity.itemHandler.getSlots());
+        for (int i = 0; i < pBlockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, pBlockEntity.itemHandler.getStackInSlot(i));
+        }
 
-        entity.itemHandler.setStackInSlot(3, new ItemStack(ModItems.TOTEM_OF_RESURRECTION.get(),
-                entity.itemHandler.getStackInSlot(3).getCount() + 1));
+        Optional<ShapedMatterManipulationRecipe> match = level.getRecipeManager()
+                .getRecipeFor(ShapedMatterManipulationRecipe.Type.INSTANCE, inventory, level);
+
+                /*if (level.getServer() != null && match.isPresent()) {
+                    if (level.getServer().getPlayerList().getPlayerByName("Dev") != null) {
+                        if (level.getServer().getPlayerList().getPlayerByName("Dev").getItemInHand(InteractionHand.MAIN_HAND) != null) {
+                            level.getServer().getPlayerList().getPlayerByName("Dev")
+                                    .getItemInHand(InteractionHand.MAIN_HAND).setHoverName(
+                                    Component.literal("" + match.get().getManipulationTime()));
+                        }
+
+                    }
+                }*/
+
+        if (match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
+                && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem())) {
+            pBlockEntity.manipulationTimeTotal = match.get().getManipulationTime();
+
+        }
+
+        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
+                && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem());
     }
 
-    private static boolean hasRecipe(MatterManipulatorBlockEntity entity) {
-        boolean hasItemInWaterSlot = PotionUtils.getPotion(entity.itemHandler.getStackInSlot(0)) == Potions.WATER;
-        boolean hasItemInFirstSlot = entity.itemHandler.getStackInSlot(1).getItem() == ModItems.CHERRY.get();
-        boolean hasItemInSecondSlot = entity.itemHandler.getStackInSlot(2).getItem() == ModItems.TIME_GEM.get();
+    private static void craftItem(MatterManipulatorBlockEntity pBlockEntity) {
+        Level level = pBlockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(pBlockEntity.itemHandler.getSlots());
+        for (int i = 0; i < pBlockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, pBlockEntity.itemHandler.getStackInSlot(i));
+        }
 
-        return hasItemInWaterSlot && hasItemInFirstSlot && hasItemInSecondSlot;
+        Optional<ShapedMatterManipulationRecipe> match = level.getRecipeManager()
+                .getRecipeFor(ShapedMatterManipulationRecipe.Type.INSTANCE, inventory, level);
+
+        if(match.isPresent()) {
+            for (int i = 0; i < pBlockEntity.itemHandler.getSlots(); i++) {
+                pBlockEntity.itemHandler.extractItem(i, 1, false);
+            }
+
+            pBlockEntity.itemHandler.insertItem(10, match.get().getResultItem(), false);
+
+            pBlockEntity.resetProgress();
+        }
     }
 
-    private static boolean hasNotReachedStackLimit(MatterManipulatorBlockEntity entity) {
-        return entity.itemHandler.getStackInSlot(3).getCount() < entity.itemHandler.getStackInSlot(3).getMaxStackSize();
+    private void resetProgress() {
+        this.manipulationProgress = 0;
+        this.manipulationTimeTotal = 200;
+    }
+
+    private static boolean canInsertItemIntoOutputSlot(SimpleContainer pContainer, ItemStack pResult) {
+        return pContainer.getItem(10).getItem() == pResult.getItem() || pContainer.getItem(10).isEmpty();
+    }
+
+    private static boolean canInsertAmountIntoOutputSlot(SimpleContainer pContainer) {
+        return pContainer.getItem(10).getMaxStackSize() > pContainer.getItem(10).getCount();
     }
 }

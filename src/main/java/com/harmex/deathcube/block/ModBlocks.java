@@ -3,19 +3,15 @@ package com.harmex.deathcube.block;
 import com.harmex.deathcube.DeathCube;
 import com.harmex.deathcube.block.custom.MatterManipulatorBlock;
 import com.harmex.deathcube.block.custom.ModFlammableRotatedPillarBlock;
-import com.harmex.deathcube.block.entity.custom.MatterManipulatorBlockEntity;
+import com.harmex.deathcube.block.custom.ResurrectionAltarBlock;
 import com.harmex.deathcube.item.ModCreativeModeTab;
 import com.harmex.deathcube.item.ModItems;
 import com.harmex.deathcube.world.feature.tree.CherryTreeGrower;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -31,6 +27,12 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> MATTER_MANIPULATOR = registerBlock("matter_manipulator",
             () -> new MatterManipulatorBlock(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(9f)
+                    .requiresCorrectToolForDrops()
+            ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB);
+
+    public static final RegistryObject<Block> RESURRECTION_ALTAR = registerBlock("resurrection_altar",
+            () -> new ResurrectionAltarBlock(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(9f)
                     .requiresCorrectToolForDrops()
             ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB);

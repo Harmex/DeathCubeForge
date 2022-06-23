@@ -1,5 +1,6 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "deathcube:matter_manipulation_shaped",
+  "manipulationtime": 100,
   "key": {
     "#": {
       "item": "minecraft:stick"
@@ -9,10 +10,13 @@
     }
   },
   "pattern": [
-    "X",
-    "X",
-    "#"
+    " X ",
+    " X ",
+    " # "
   ],
+  "extra": {
+    "item": "minecraft:diamond_sword"
+  },
   "result": {
     "item": "deathcube:obsidian_sword"
   }

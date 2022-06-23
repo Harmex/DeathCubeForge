@@ -18,6 +18,9 @@ public class ModMenuTypes {
     public static final RegistryObject<MenuType<MatterManipulatorMenu>> MATTER_MANIPULATOR_MENU =
             registerMenuType(MatterManipulatorMenu::new, "matter_manipulator_menu");
 
+    public static final RegistryObject<MenuType<ResurrectionAltarMenu>> RESURRECTION_ALTAR_MENU =
+            registerMenuType(ResurrectionAltarMenu::new, "resurrection_altar_menu");
+
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,
                                                                                                  String name) {

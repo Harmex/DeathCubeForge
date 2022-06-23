@@ -66,44 +66,44 @@ public class TimeWandItem extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         ItemStack itemStack = pPlayer.getItemInHand(pUsedHand);
+        if (!pPlayer.isShiftKeyDown()) {
+            if (itemStack.getItem() instanceof TimeWandItem) {
+                if (itemStack.hasTag()) {
+                    assert itemStack.getTag() != null;
+                    if (itemStack.getTag().contains("deathcube.saved_dim")) {
+                        String savedDim = itemStack.getTag().getString("deathcube.saved_dim");
 
-        if (itemStack.getItem() instanceof TimeWandItem) {
-            if (itemStack.hasTag()) {
-                assert itemStack.getTag() != null;
-                if (itemStack.getTag().contains("deathcube.saved_dim")) {
-                    String savedDim = itemStack.getTag().getString("deathcube.saved_dim");
+                        ResourceLocation location = new ResourceLocation(savedDim);
+                        ResourceKey<Level> resourceKey = ResourceKey.create(Registry.DIMENSION_REGISTRY, location);
+                        MinecraftServer minecraftServer = pLevel.getServer();
 
-                    ResourceLocation location = new ResourceLocation(savedDim);
+                        if (minecraftServer == null) {
+                            return InteractionResultHolder.fail(itemStack);
+                        }
 
-                    ResourceKey<Level> resourceKey = ResourceKey.create(Registry.DIMENSION_REGISTRY, location);
+                        ServerLevel targetDim = minecraftServer.getLevel(resourceKey);
 
-                    MinecraftServer minecraftServer = pLevel.getServer();
+                        if (targetDim != null && targetDim != pLevel) {
+                            pPlayer.changeDimension(targetDim);
+                        }
+                    }
+                    if (itemStack.getTag().contains("deathcube.saved_pos")) {
+                        int[] savedPos = itemStack.getTag().getIntArray("deathcube.saved_pos");
 
-                    if (minecraftServer == null) {
+                        pPlayer.teleportTo(savedPos[0] + 0.5, savedPos[1], savedPos[2] + 0.5);
+
+                        return InteractionResultHolder.success(itemStack);
+                    } else {
                         return InteractionResultHolder.fail(itemStack);
                     }
-
-                    ServerLevel targetDim = minecraftServer.getLevel(resourceKey);
-
-                    if (targetDim != null && targetDim != pLevel) {
-                        pPlayer.changeDimension(targetDim);
-                    }
-                }
-                if (itemStack.getTag().contains("deathcube.saved_pos")) {
-                    int[] savedPos = itemStack.getTag().getIntArray("deathcube.saved_pos");
-
-                    pPlayer.teleportTo(savedPos[0] + 0.5, savedPos[1], savedPos[2] + 0.5);
-
-                    return InteractionResultHolder.success(itemStack);
                 } else {
                     return InteractionResultHolder.fail(itemStack);
                 }
             } else {
                 return InteractionResultHolder.fail(itemStack);
             }
-        } else {
-            return InteractionResultHolder.fail(itemStack);
         }
+        return InteractionResultHolder.fail(itemStack);
     }
 
     @Override

@@ -9,11 +9,11 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class MatterManipulatorScreen extends AbstractContainerScreen<MatterManipulatorMenu> {
+public class ResurrectionAltarScreen extends AbstractContainerScreen<ResurrectionAltarMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(DeathCube.MODID, "textures/gui/matter_manipulator_gui.png");
+            new ResourceLocation(DeathCube.MODID, "textures/gui/resurrection_altar_gui.png");
 
-    public MatterManipulatorScreen(MatterManipulatorMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public ResurrectionAltarScreen(ResurrectionAltarMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }
 
@@ -26,10 +26,6 @@ public class MatterManipulatorScreen extends AbstractContainerScreen<MatterManip
         int y = (height - imageHeight) / 2;
 
         this.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
-
-        if (menu.isCrafting()) {
-            blit(pPoseStack, x + 101, y + 35, 176, 0, menu.getScaledProgress(), 17);
-        }
     }
 
     @Override

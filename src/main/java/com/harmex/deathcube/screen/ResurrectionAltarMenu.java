@@ -2,60 +2,40 @@ package com.harmex.deathcube.screen;
 
 import com.harmex.deathcube.block.ModBlocks;
 import com.harmex.deathcube.block.entity.custom.MatterManipulatorBlockEntity;
+import com.harmex.deathcube.block.entity.custom.ResurrectionAltarBlockEntity;
 import com.harmex.deathcube.screen.slot.ModResultSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.*;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
-import org.jetbrains.annotations.NotNull;
 
-public class MatterManipulatorMenu extends AbstractContainerMenu {
-    private final MatterManipulatorBlockEntity blockEntity;
+public class ResurrectionAltarMenu extends AbstractContainerMenu {
+    private final ResurrectionAltarBlockEntity blockEntity;
     private final Level level;
-    private final ContainerData dataAccess;
 
-    public MatterManipulatorMenu(int pContainerId, Inventory pInventory, FriendlyByteBuf pExtraData) {
-        this(pContainerId, pInventory, pInventory.player.level.getBlockEntity(pExtraData.readBlockPos()), new SimpleContainerData(2));
+    public ResurrectionAltarMenu(int pContainerId, Inventory inventory, FriendlyByteBuf extraData) {
+        this(pContainerId, inventory, inventory.player.level.getBlockEntity(extraData.readBlockPos()));
     }
 
-    public MatterManipulatorMenu(int pContainerId, Inventory inventory, BlockEntity blockEntity, ContainerData dataAccess) {
+    public ResurrectionAltarMenu(int pContainerId, Inventory inventory, BlockEntity blockEntity) {
         super(ModMenuTypes.MATTER_MANIPULATOR_MENU.get(), pContainerId);
-        checkContainerSize(inventory, 11);
-        this.blockEntity = ((MatterManipulatorBlockEntity) blockEntity);
+        checkContainerSize(inventory, 1);
+        this.blockEntity = ((ResurrectionAltarBlockEntity) blockEntity);
         this.level = inventory.player.level;
-        this.dataAccess = dataAccess;
 
         addPlayerInventory(inventory);
         addPlayerHotbar(inventory);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            for(int i = 0; i < 3; ++i) {
-                for(int j = 0; j < 3; ++j) {
-                    this.addSlot(new SlotItemHandler(handler, j + i * 3, 8 + j * 18, 17 + i * 18));
-                }
-            }
-            this.addSlot(new SlotItemHandler(handler, 9, 80, 35));
-            this.addSlot(new ModResultSlot(handler, 10, 134, 35));
+            this.addSlot(new SlotItemHandler(handler, 0, 98, 35));
         });
-
-        addDataSlots(dataAccess);
-    }
-
-    public boolean isCrafting() {
-        return dataAccess.get(0) > 0;
-    }
-
-    public int getScaledProgress() {
-        int progress = dataAccess.get(0);
-        int maxProgress = dataAccess.get(1);
-        int progressArrowSize = 24;
-
-        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
 
 
@@ -76,10 +56,10 @@ public class MatterManipulatorMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 11;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 1;  // must be the number of slots you have!
 
     @Override
-    public @NotNull ItemStack quickMoveStack(Player playerIn, int index) {
+    public ItemStack quickMoveStack(Player playerIn, int index) {
         Slot sourceSlot = slots.get(index);
         if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;  //EMPTY_ITEM
         ItemStack sourceStack = sourceSlot.getItem();

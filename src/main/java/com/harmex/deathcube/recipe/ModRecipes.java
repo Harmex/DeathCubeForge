@@ -12,9 +12,9 @@ public class ModRecipes {
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, DeathCube.MODID);
 
 
-    public static final RegistryObject<RecipeSerializer<MatterManipulatorRecipe>> MATTER_MANIPULATION_SERIALIZER =
-            SERIALIZERS.register("matter_manipulation",
-                    () -> MatterManipulatorRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<ShapedMatterManipulationRecipe>> SHAPED_MATTER_MANIPULATION_SERIALIZER =
+            SERIALIZERS.register("matter_manipulation_shaped",
+                    () -> ShapedMatterManipulationRecipe.Serializer.INSTANCE);
 
 
     public static void register(IEventBus eventBus) {
