@@ -2,6 +2,7 @@ package com.harmex.deathcube;
 
 import com.harmex.deathcube.block.ModBlocks;
 import com.harmex.deathcube.block.entity.ModBlockEntities;
+import com.harmex.deathcube.block.entity.ModWoodTypes;
 import com.harmex.deathcube.config.DeathCubeClientConfigs;
 import com.harmex.deathcube.config.DeathCubeCommonConfigs;
 import com.harmex.deathcube.item.ModItems;
@@ -10,6 +11,7 @@ import com.harmex.deathcube.potion.ModPotions;
 import com.harmex.deathcube.recipe.ModRecipes;
 import com.harmex.deathcube.screen.ModMenuTypes;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.common.MinecraftForge;
@@ -52,6 +54,8 @@ public class DeathCube {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CHERRY_SAPLING.getId(), ModBlocks.POTTED_CHERRY_SAPLING);
+
+            Sheets.addWoodType(ModWoodTypes.CHERRY);
         });
     }
 

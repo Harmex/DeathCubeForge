@@ -1,6 +1,7 @@
 package com.harmex.deathcube.item;
 
 import com.harmex.deathcube.DeathCube;
+import com.harmex.deathcube.block.ModBlocks;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.ItemTags;
@@ -13,8 +14,35 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    OAK("oak", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_LEATHER,
-            0.0F, 0.0F, () -> Ingredient.of(ItemTags.LOGS)
+    OAK("oak", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_GENERIC,
+            0.0F, 0.0F, () -> Ingredient.of(Items.OAK_LOG)
+    ),
+    SPRUCE("spruce", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_GENERIC,
+            0.0F, 0.0F, () -> Ingredient.of(Items.SPRUCE_LOG)
+    ),
+    BIRCH("birch", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_GENERIC,
+            0.0F, 0.0F, () -> Ingredient.of(Items.BIRCH_LOG)
+    ),
+    JUNGLE("jungle", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_GENERIC,
+            0.0F, 0.0F, () -> Ingredient.of(Items.JUNGLE_LOG)
+    ),
+    ACACIA("acacia", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_GENERIC,
+            0.0F, 0.0F, () -> Ingredient.of(Items.ACACIA_LOG)
+    ),
+    DARK_OAK("dark_oak", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_GENERIC,
+            0.0F, 0.0F, () -> Ingredient.of(Items.DARK_OAK_LOG)
+    ),
+    MANGROVE("mangrove", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_GENERIC,
+            0.0F, 0.0F, () -> Ingredient.of(Items.MANGROVE_LOG)
+    ),
+    CHERRY("cherry", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_GENERIC,
+            0.0F, 0.0F, () -> Ingredient.of(ModBlocks.CHERRY_LOG.get().asItem())
+    ),
+    CRIMSON("crimson", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_GENERIC,
+            0.0F, 0.0F, () -> Ingredient.of(Items.CRIMSON_STEM)
+    ),
+    WARPED("warped", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_GENERIC,
+            0.0F, 0.0F, () -> Ingredient.of(Items.WARPED_STEM)
     ),
     BONE("bone", 5, new int[]{1, 3, 4, 2}, 15, SoundEvents.ARMOR_EQUIP_LEATHER,
             0.0F, 0.0F, () -> Ingredient.of(Items.BONE)

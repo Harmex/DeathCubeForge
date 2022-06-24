@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "deathcube:cherry_planks"
+    }
+  ],
+  "result": {
+    "item": "deathcube:cherry_button"
+  }
+}

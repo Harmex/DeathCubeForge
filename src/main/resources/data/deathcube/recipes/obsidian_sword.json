@@ -1,18 +1,21 @@
 {
   "type": "deathcube:matter_manipulation_shaped",
-  "manipulationtime": 100,
   "key": {
     "#": {
-      "item": "minecraft:stick"
+      "item": "minecraft:blaze_rod"
     },
     "X": {
       "item": "minecraft:obsidian"
     }
   },
+  "count": {
+    "#": 8,
+    "X": 8
+  },
   "pattern": [
-    " X ",
-    " X ",
-    " # "
+    "X",
+    "X",
+    "#"
   ],
   "extra": {
     "item": "minecraft:diamond_sword"

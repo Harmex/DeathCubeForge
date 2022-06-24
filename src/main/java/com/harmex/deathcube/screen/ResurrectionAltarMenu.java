@@ -25,7 +25,7 @@ public class ResurrectionAltarMenu extends AbstractContainerMenu {
     }
 
     public ResurrectionAltarMenu(int pContainerId, Inventory inventory, BlockEntity blockEntity) {
-        super(ModMenuTypes.MATTER_MANIPULATOR_MENU.get(), pContainerId);
+        super(ModMenuTypes.RESURRECTION_ALTAR_MENU.get(), pContainerId);
         checkContainerSize(inventory, 1);
         this.blockEntity = ((ResurrectionAltarBlockEntity) blockEntity);
         this.level = inventory.player.level;

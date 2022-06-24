@@ -3,6 +3,7 @@ package com.harmex.deathcube.block.entity;
 import com.harmex.deathcube.DeathCube;
 import com.harmex.deathcube.block.ModBlocks;
 import com.harmex.deathcube.block.entity.custom.MatterManipulatorBlockEntity;
+import com.harmex.deathcube.block.entity.custom.ModSignBlockEntity;
 import com.harmex.deathcube.block.entity.custom.ResurrectionAltarBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -24,6 +25,13 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("resurrection_altar",
                     () -> BlockEntityType.Builder.of(ResurrectionAltarBlockEntity::new,
                             ModBlocks.RESURRECTION_ALTAR.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<ModSignBlockEntity>> SIGN_BLOCK_ENTITIES =
+            BLOCK_ENTITIES.register("sign",
+                    () -> BlockEntityType.Builder.of(ModSignBlockEntity::new,
+                            ModBlocks.CHERRY_SIGN.get(),
+                            ModBlocks.CHERRY_WALL_SIGN.get()
+                    ).build(null));
 
 
     public static void register(IEventBus eventBus) {

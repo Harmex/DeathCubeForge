@@ -23,12 +23,24 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         blockItem(ModBlocks.MATTER_MANIPULATOR.get());
+        blockItem(ModBlocks.RESURRECTION_ALTAR.get());
+
+        blockItem(ModBlocks.CHERRY_PLANKS.get());
         plantItem(ModBlocks.CHERRY_SAPLING.get());
-        blockItem(ModBlocks.CHERRY_LEAVES.get());
         blockItem(ModBlocks.CHERRY_LOG.get());
-        blockItem(ModBlocks.CHERRY_WOOD.get());
         blockItem(ModBlocks.STRIPPED_CHERRY_LOG.get());
         blockItem(ModBlocks.STRIPPED_CHERRY_WOOD.get());
+        blockItem(ModBlocks.CHERRY_WOOD.get());
+        blockItem(ModBlocks.CHERRY_LEAVES.get());
+        blockItem(ModBlocks.CHERRY_SLAB.get());
+        blockItem(ModBlocks.CHERRY_FENCE.get());
+        blockItem(ModBlocks.CHERRY_STAIRS.get());
+        blockItem(ModBlocks.CHERRY_BUTTON.get());
+        blockItem(ModBlocks.CHERRY_PRESSURE_PLATE.get());
+        //basicItem(ModBlocks.CHERRY_DOOR.get().asItem());
+        blockItem(ModBlocks.CHERRY_TRAPDOOR.get());
+        blockItem(ModBlocks.CHERRY_FENCE_GATE.get());
+        basicItem(ModItems.CHERRY_SIGN.get());
 
         basicItem(ModItems.ENDER_DRAGON_SCALE.get());
         basicItem(ModItems.WARDEN_HEART.get());
@@ -43,11 +55,46 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.TIME_WAND.get());
         basicItem(ModItems.ENDER_BAG.get());
 
-
         basicItem(ModItems.OAK_HELMET.get());
         basicItem(ModItems.OAK_CHESTPLATE.get());
         basicItem(ModItems.OAK_LEGGINGS.get());
         basicItem(ModItems.OAK_BOOTS.get());
+        basicItem(ModItems.SPRUCE_HELMET.get());
+        basicItem(ModItems.SPRUCE_CHESTPLATE.get());
+        basicItem(ModItems.SPRUCE_LEGGINGS.get());
+        basicItem(ModItems.SPRUCE_BOOTS.get());
+        basicItem(ModItems.BIRCH_HELMET.get());
+        basicItem(ModItems.BIRCH_CHESTPLATE.get());
+        basicItem(ModItems.BIRCH_LEGGINGS.get());
+        basicItem(ModItems.BIRCH_BOOTS.get());
+        basicItem(ModItems.JUNGLE_HELMET.get());
+        basicItem(ModItems.JUNGLE_CHESTPLATE.get());
+        basicItem(ModItems.JUNGLE_LEGGINGS.get());
+        basicItem(ModItems.JUNGLE_BOOTS.get());
+        basicItem(ModItems.ACACIA_HELMET.get());
+        basicItem(ModItems.ACACIA_CHESTPLATE.get());
+        basicItem(ModItems.ACACIA_LEGGINGS.get());
+        basicItem(ModItems.ACACIA_BOOTS.get());
+        basicItem(ModItems.DARK_OAK_HELMET.get());
+        basicItem(ModItems.DARK_OAK_CHESTPLATE.get());
+        basicItem(ModItems.DARK_OAK_LEGGINGS.get());
+        basicItem(ModItems.DARK_OAK_BOOTS.get());
+        basicItem(ModItems.MANGROVE_HELMET.get());
+        basicItem(ModItems.MANGROVE_CHESTPLATE.get());
+        basicItem(ModItems.MANGROVE_LEGGINGS.get());
+        basicItem(ModItems.MANGROVE_BOOTS.get());
+        basicItem(ModItems.CHERRY_HELMET.get());
+        basicItem(ModItems.CHERRY_CHESTPLATE.get());
+        basicItem(ModItems.CHERRY_LEGGINGS.get());
+        basicItem(ModItems.CHERRY_BOOTS.get());
+        basicItem(ModItems.CRIMSON_HELMET.get());
+        basicItem(ModItems.CRIMSON_CHESTPLATE.get());
+        basicItem(ModItems.CRIMSON_LEGGINGS.get());
+        basicItem(ModItems.CRIMSON_BOOTS.get());
+        basicItem(ModItems.WARPED_HELMET.get());
+        basicItem(ModItems.WARPED_CHESTPLATE.get());
+        basicItem(ModItems.WARPED_LEGGINGS.get());
+        basicItem(ModItems.WARPED_BOOTS.get());
 
         basicItem(ModItems.BONE_HELMET.get());
         basicItem(ModItems.BONE_CHESTPLATE.get());

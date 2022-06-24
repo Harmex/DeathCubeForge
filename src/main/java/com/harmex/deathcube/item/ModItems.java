@@ -1,6 +1,7 @@
 package com.harmex.deathcube.item;
 
 import com.harmex.deathcube.DeathCube;
+import com.harmex.deathcube.block.ModBlocks;
 import com.harmex.deathcube.item.custom.*;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
@@ -73,6 +74,14 @@ public class ModItems {
                             .tab(ModCreativeModeTab.DEATHCUBE_MISC_TAB)
                             .rarity(Rarity.UNCOMMON)
                     ));
+    public static final RegistryObject<Item> CHERRY_SIGN =
+            ITEMS.register("cherry_sign",
+                    () -> new SignItem(new Item.Properties()
+                            .tab(ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB)
+                            .stacksTo(16),
+                            ModBlocks.CHERRY_SIGN.get(),
+                            ModBlocks.CHERRY_WALL_SIGN.get()
+                    ));
     //endregion
 
     //region Log Armors
@@ -88,6 +97,123 @@ public class ModItems {
                     .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
     public static final RegistryObject<Item> OAK_BOOTS = ITEMS.register("oak_boots",
             () -> new ArmorItem(ModArmorMaterials.OAK, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    //Spruce
+    public static final RegistryObject<Item> SPRUCE_HELMET = ITEMS.register("spruce_helmet",
+            () -> new ArmorItem(ModArmorMaterials.SPRUCE, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> SPRUCE_CHESTPLATE = ITEMS.register("spruce_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.SPRUCE, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> SPRUCE_LEGGINGS = ITEMS.register("spruce_leggings",
+            () -> new ArmorItem(ModArmorMaterials.SPRUCE, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> SPRUCE_BOOTS = ITEMS.register("spruce_boots",
+            () -> new ArmorItem(ModArmorMaterials.SPRUCE, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    //Birch
+    public static final RegistryObject<Item> BIRCH_HELMET = ITEMS.register("birch_helmet",
+            () -> new ArmorItem(ModArmorMaterials.BIRCH, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> BIRCH_CHESTPLATE = ITEMS.register("birch_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.BIRCH, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> BIRCH_LEGGINGS = ITEMS.register("birch_leggings",
+            () -> new ArmorItem(ModArmorMaterials.BIRCH, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> BIRCH_BOOTS = ITEMS.register("birch_boots",
+            () -> new ArmorItem(ModArmorMaterials.BIRCH, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    //Jungle
+    public static final RegistryObject<Item> JUNGLE_HELMET = ITEMS.register("jungle_helmet",
+            () -> new ArmorItem(ModArmorMaterials.JUNGLE, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> JUNGLE_CHESTPLATE = ITEMS.register("jungle_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.JUNGLE, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> JUNGLE_LEGGINGS = ITEMS.register("jungle_leggings",
+            () -> new ArmorItem(ModArmorMaterials.JUNGLE, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> JUNGLE_BOOTS = ITEMS.register("jungle_boots",
+            () -> new ArmorItem(ModArmorMaterials.JUNGLE, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    //Acacia
+    public static final RegistryObject<Item> ACACIA_HELMET = ITEMS.register("acacia_helmet",
+            () -> new ArmorItem(ModArmorMaterials.ACACIA, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> ACACIA_CHESTPLATE = ITEMS.register("acacia_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.ACACIA, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> ACACIA_LEGGINGS = ITEMS.register("acacia_leggings",
+            () -> new ArmorItem(ModArmorMaterials.ACACIA, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> ACACIA_BOOTS = ITEMS.register("acacia_boots",
+            () -> new ArmorItem(ModArmorMaterials.ACACIA, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    //Dark Oak
+    public static final RegistryObject<Item> DARK_OAK_HELMET = ITEMS.register("dark_oak_helmet",
+            () -> new ArmorItem(ModArmorMaterials.DARK_OAK, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> DARK_OAK_CHESTPLATE = ITEMS.register("dark_oak_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.DARK_OAK, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> DARK_OAK_LEGGINGS = ITEMS.register("dark_oak_leggings",
+            () -> new ArmorItem(ModArmorMaterials.DARK_OAK, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> DARK_OAK_BOOTS = ITEMS.register("dark_oak_boots",
+            () -> new ArmorItem(ModArmorMaterials.DARK_OAK, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    //Mangrove
+    public static final RegistryObject<Item> MANGROVE_HELMET = ITEMS.register("mangrove_helmet",
+            () -> new ArmorItem(ModArmorMaterials.MANGROVE, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> MANGROVE_CHESTPLATE = ITEMS.register("mangrove_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.MANGROVE, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> MANGROVE_LEGGINGS = ITEMS.register("mangrove_leggings",
+            () -> new ArmorItem(ModArmorMaterials.MANGROVE, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> MANGROVE_BOOTS = ITEMS.register("mangrove_boots",
+            () -> new ArmorItem(ModArmorMaterials.MANGROVE, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    //Cherry
+    public static final RegistryObject<Item> CHERRY_HELMET = ITEMS.register("cherry_helmet",
+            () -> new ArmorItem(ModArmorMaterials.CHERRY, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> CHERRY_CHESTPLATE = ITEMS.register("cherry_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.CHERRY, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> CHERRY_LEGGINGS = ITEMS.register("cherry_leggings",
+            () -> new ArmorItem(ModArmorMaterials.CHERRY, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> CHERRY_BOOTS = ITEMS.register("cherry_boots",
+            () -> new ArmorItem(ModArmorMaterials.CHERRY, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    //Crimson
+    public static final RegistryObject<Item> CRIMSON_HELMET = ITEMS.register("crimson_helmet",
+            () -> new ArmorItem(ModArmorMaterials.CRIMSON, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> CRIMSON_CHESTPLATE = ITEMS.register("crimson_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.CRIMSON, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> CRIMSON_LEGGINGS = ITEMS.register("crimson_leggings",
+            () -> new ArmorItem(ModArmorMaterials.CRIMSON, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> CRIMSON_BOOTS = ITEMS.register("crimson_boots",
+            () -> new ArmorItem(ModArmorMaterials.CRIMSON, EquipmentSlot.FEET, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    //Warped
+    public static final RegistryObject<Item> WARPED_HELMET = ITEMS.register("warped_helmet",
+            () -> new ArmorItem(ModArmorMaterials.WARPED, EquipmentSlot.HEAD, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> WARPED_CHESTPLATE = ITEMS.register("warped_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.WARPED, EquipmentSlot.CHEST, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> WARPED_LEGGINGS = ITEMS.register("warped_leggings",
+            () -> new ArmorItem(ModArmorMaterials.WARPED, EquipmentSlot.LEGS, new Item.Properties()
+                    .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
+    public static final RegistryObject<Item> WARPED_BOOTS = ITEMS.register("warped_boots",
+            () -> new ArmorItem(ModArmorMaterials.WARPED, EquipmentSlot.FEET, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)));
     //endregion
     

@@ -14,11 +14,14 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -36,7 +39,8 @@ public class ShapedMatterManipulationRecipe implements Recipe<SimpleContainer> {
     private final int manipulationTime;
 
     public ShapedMatterManipulationRecipe(ResourceLocation id, int width, int height, int manipulationTime,
-                                          NonNullList<Ingredient> recipeItems, ItemStack extraItem, ItemStack result) {
+                                          NonNullList<Ingredient> recipeItems,
+                                          ItemStack extraItem, ItemStack result) {
         this.id = id;
         this.result = result;
         this.extraItem = extraItem;
@@ -77,9 +81,20 @@ public class ShapedMatterManipulationRecipe implements Recipe<SimpleContainer> {
         return this.recipeItems;
     }
 
+    public ItemStack getExtraItem() {
+        return this.extraItem;
+    }
+
+    public int getWidth() {
+        return this.width;
+    }
+    public int getHeight() {
+        return this.height;
+    }
+
     @Override
     public boolean canCraftInDimensions(int pWidth, int pHeight) {
-        return true;
+        return pWidth >= this.width && pHeight >= this.height;
     }
 
     @Override
@@ -88,42 +103,38 @@ public class ShapedMatterManipulationRecipe implements Recipe<SimpleContainer> {
             return false;
         }
 
-        if (this.matches(pContainer, true)) {
-            this.extraItemTag = pContainer.getItem(9).getTag();
-            return true;
-        }
+        for(int i = 0; i <= 3 - this.width; ++i) {
+            for (int j = 0; j <= 3 - this.height; ++j) {
+                if (this.matches(pContainer, i, j, true)) {
+                    this.extraItemTag = pContainer.getItem(9).getTag();
+                    return true;
+                }
 
-        if (this.matches(pContainer, false)) {
-            this.extraItemTag = pContainer.getItem(9).getTag();
-            return true;
+                if (this.matches(pContainer, i, j, false)) {
+                    this.extraItemTag = pContainer.getItem(9).getTag();
+                    return true;
+                }
+            }
         }
 
         return false;
     }
 
-    private boolean matches(Container pContainer, boolean pMirrored) {
-        for(int i = 0; i < this.width; ++i) {
-            for(int j = 0; j < this.height; ++j) {
-                Ingredient ingredient;
-                if (pMirrored) {
-                    ingredient = this.recipeItems.get(this.width - i - 1 + j * this.width);
-                } else {
-                    ingredient = this.recipeItems.get(i + j * this.width);
+    private boolean matches(Container pContainer, int pWidth, int pHeight, boolean pMirrored) {
+        for(int i = 0; i < 3; ++i) {
+            for(int j = 0; j < 3; ++j) {
+                int k = i - pWidth;
+                int l = j - pHeight;
+                Ingredient ingredient = Ingredient.EMPTY;
+                if (k >= 0 && l >= 0 && k < this.width && l < this.height) {
+                    if (pMirrored) {
+                        ingredient = this.recipeItems.get(this.width - k - 1 + l * this.width);
+                    } else {
+                        ingredient = this.recipeItems.get(k + l * this.width);
+                    }
                 }
 
-                /*if (pLevel.getServer() != null) {
-                    if (pLevel.getServer().getPlayerList().getPlayerByName("Dev") != null) {
-                        if (pLevel.getServer().getPlayerList().getPlayerByName("Dev").getItemInHand(InteractionHand.MAIN_HAND) != null) {
-                            pLevel.getServer().getPlayerList().getPlayerByName("Dev")
-                                    .getItemInHand(InteractionHand.MAIN_HAND).setHoverName(
-                                    Component.literal("Ingredient : " + Arrays.toString(ingredient.getItems())
-                                            + ", I : " + i + ", J : " + j + ", recipeItems : " + pContainer.getItem(i + j * this.width)));
-                        }
-
-                    }
-                }*/
-
-                if (!ingredient.test(pContainer.getItem(i + j * this.width))) {
+                if (!ingredient.test(pContainer.getItem(i + j * 3))) {
                     return false;
                 }
             }
@@ -265,6 +276,7 @@ public class ShapedMatterManipulationRecipe implements Recipe<SimpleContainer> {
         return map;
     }
 
+
     public static ItemStack itemStackFromJson(JsonObject pStackObject) {
         return net.minecraftforge.common.crafting.CraftingHelper.getItemStack(pStackObject, true, true);
     }
@@ -322,9 +334,7 @@ public class ShapedMatterManipulationRecipe implements Recipe<SimpleContainer> {
             NonNullList<Ingredient> recipeItems = NonNullList.withSize(width * height, Ingredient.EMPTY);
 
             //Put the ingredients in the list
-            for(int i = 0; i < recipeItems.size(); ++i) {
-                recipeItems.set(i, Ingredient.fromNetwork(pBuffer));
-            }
+            recipeItems.replaceAll(ignored -> Ingredient.fromNetwork(pBuffer));
 
             //get the extra item
             ItemStack extraItem = pBuffer.readItem();
