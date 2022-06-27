@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_orientable_trapdoor_top",
   "textures": {
-    "texture": "deathcube:block/cherry_planks"
+    "texture": "deathcube:block/cherry_trapdoor"
   }
 }

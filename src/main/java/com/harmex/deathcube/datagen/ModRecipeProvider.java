@@ -337,16 +337,25 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("XXX")
                 .unlockedBy("has_echo_shard", has(Items.ECHO_SHARD))
                 .save(pFinishedRecipeConsumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.ECHO_AMETHYST_BLOCK.get(), 1)
+                .define('#', ModItems.ECHO_AMETHYST_INGOT.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_echo_amethyst_ingot", has(ModItems.ECHO_AMETHYST_INGOT.get()))
+                .save(pFinishedRecipeConsumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.MATTER_MANIPULATOR.get(), 1)
+                .define('X', ModBlocks.ECHO_AMETHYST_BLOCK.get())
+                .define('#', ModItems.ECHO_AMETHYST_INGOT.get())
+                .define('B', Blocks.BLUE_ICE)
+                .define('M', Blocks.MAGMA_BLOCK)
+                .pattern("#X#")
+                .pattern("#B#")
+                .pattern("#M#")
+                .unlockedBy("has_echo_amethyst_block", has(ModBlocks.ECHO_AMETHYST_BLOCK.get()))
+                .save(pFinishedRecipeConsumer);
         //endregion
 
-        ShapedRecipeBuilder.shaped(ModBlocks.MATTER_MANIPULATOR.get(), 1)
-                .define('#', ModItems.ECHO_AMETHYST_INGOT.get())
-                .define('X', Blocks.CRAFTING_TABLE)
-                .pattern("XXX")
-                .pattern("X#X")
-                .pattern("XXX")
-                .unlockedBy("has_echo_shard", has(Items.ECHO_SHARD))
-                .save(pFinishedRecipeConsumer);
     }
     private void shapelessRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
         //Cherry Furniture

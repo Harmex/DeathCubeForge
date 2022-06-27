@@ -6,10 +6,12 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.FrameType;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.advancements.AdvancementProvider;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,7 +25,7 @@ public class ModAdvancementProvider extends AdvancementProvider {
     @Override
     protected void registerAdvancements(@NotNull Consumer<Advancement> consumer, @NotNull ExistingFileHelper fileHelper) {
         Advancement.Builder.advancement()
-                .addCriterion("crafting_table", new Criterion())
+                .addCriterion("crafting_table", InventoryChangeTrigger.TriggerInstance.hasItems(Items.CRAFTING_TABLE))
                 .display(ModBlocks.CHERRY_LOG.get(),
                         Component.translatable("advancements.deathcube.root.title"),    //Title
                         Component.translatable("advancements.deathcube.root.description"),  //Description

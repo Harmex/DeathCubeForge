@@ -8,6 +8,8 @@
   "item.deathcube.bedrock_apple": "Bedrock Apple",
 
   "item.deathcube.time_gem": "Time Gem",
+  "item.deathcube.echo_amethyst_shard": "Echo-Amethyst Shard",
+  "item.deathcube.echo_amethyst_ingot": "Echo-Amethyst Ingot",
   "item.deathcube.ender_dragon_scale": "Ender Dragon Scale",
   "item.deathcube.warden_heart": "Warden Heart",
 
@@ -114,6 +116,7 @@
   "block.deathcube.cherry_fence_gate": "Cherry Fence Gate",
   "block.deathcube.cherry_sign": "Cherry Sign",
 
+  "block.deathcube.echo_amethyst_block": "Echo-Amethyst Block",
   "block.deathcube.matter_manipulator": "Matter Manipulator",
   "block.deathcube.resurrection_altar": "Resurrection Altar",
 

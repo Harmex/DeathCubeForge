@@ -22,6 +22,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        blockItem(ModBlocks.ECHO_AMETHYST_BLOCK.get());
         blockItem(ModBlocks.MATTER_MANIPULATOR.get());
         blockItem(ModBlocks.RESURRECTION_ALTAR.get());
 
@@ -33,12 +34,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.CHERRY_WOOD.get());
         blockItem(ModBlocks.CHERRY_LEAVES.get());
         blockItem(ModBlocks.CHERRY_SLAB.get());
-        blockItem(ModBlocks.CHERRY_FENCE.get());
+        //blockItem(ModBlocks.CHERRY_FENCE.get());
         blockItem(ModBlocks.CHERRY_STAIRS.get());
-        blockItem(ModBlocks.CHERRY_BUTTON.get());
+        //blockItem(ModBlocks.CHERRY_BUTTON.get());
         blockItem(ModBlocks.CHERRY_PRESSURE_PLATE.get());
         //basicItem(ModBlocks.CHERRY_DOOR.get().asItem());
-        blockItem(ModBlocks.CHERRY_TRAPDOOR.get());
+        //blockItem(ModBlocks.CHERRY_TRAPDOOR.get());
         blockItem(ModBlocks.CHERRY_FENCE_GATE.get());
         basicItem(ModItems.CHERRY_SIGN.get());
 

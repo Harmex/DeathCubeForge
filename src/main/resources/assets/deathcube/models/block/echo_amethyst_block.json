@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "deathcube:block/echo_amethyst_block"
+  }
+}

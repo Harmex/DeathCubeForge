@@ -2,6 +2,7 @@ package com.harmex.deathcube.item.custom;
 
 import com.harmex.deathcube.item.ModCreativeModeTab;
 import com.harmex.deathcube.item.ModItems;
+import com.harmex.deathcube.item.ModRarities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.stats.Stats;
@@ -26,15 +27,15 @@ public class EnderBagItem extends Item {
         super(new Properties()
                 .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
                 .stacksTo(1)
-                .rarity(Rarity.UNCOMMON)
+                .rarity(ModRarities.OBSIDIAN)
         );
     }
 
     @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, Player pPlayer, @NotNull InteractionHand pUsedHand) {
         PlayerEnderChestContainer playerenderchestcontainer = pPlayer.getEnderChestInventory();
         ItemStack itemStack = pPlayer.getItemInHand(pUsedHand);
-        if (playerenderchestcontainer != null && itemStack.getItem() instanceof EnderBagItem) {
+        if (itemStack.getItem() instanceof EnderBagItem) {
             if (pLevel.isClientSide) {
                 return InteractionResultHolder.success(itemStack);
             } else {
