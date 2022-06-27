@@ -1,24 +1,31 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "deathcube:matter_manipulation_shaped",
   "key": {
-    "#": {
-      "item": "minecraft:stick"
+    "E": {
+      "item": "minecraft:echo_shard",
+      "count": 4
     },
     "D": {
-      "item": "minecraft:diamond"
+      "item": "minecraft:diamond",
+      "count": 1
     },
-    "E": {
-      "item": "minecraft:emerald"
+    "N": {
+      "item": "minecraft:netherite_ingot",
+      "count": 1
     },
-    "T": {
-      "item": "deathcube:time_gem"
+    "A": {
+      "item": "minecraft:amethyst_shard",
+      "count": 8
     }
   },
   "pattern": [
-    "DTD",
-    " # ",
-    " E "
+    "N D",
+    " E ",
+    " A "
   ],
+  "extra": {
+    "item": "deathcube:time_gem"
+  },
   "result": {
     "item": "deathcube:time_wand"
   }

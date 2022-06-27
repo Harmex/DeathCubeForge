@@ -2,7 +2,9 @@ package com.harmex.deathcube.item;
 
 import com.harmex.deathcube.DeathCube;
 import com.harmex.deathcube.block.ModBlocks;
+import com.harmex.deathcube.entity.custom.ModBoatEntity;
 import com.harmex.deathcube.item.custom.*;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -54,6 +56,14 @@ public class ModItems {
     //endregion
     
     //region Misc
+    public static final RegistryObject<Item> CHERRY_SIGN =
+            ITEMS.register("cherry_sign",
+                    () -> new SignItem(new Item.Properties()
+                            .tab(ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB)
+                            .stacksTo(16),
+                            ModBlocks.CHERRY_SIGN.get(),
+                            ModBlocks.CHERRY_WALL_SIGN.get()
+                    ));
     public static final RegistryObject<Item> TOTEM_OF_RESURRECTION =
             ITEMS.register("totem_of_resurrection", TotemOfResurrectionItem::new);
     public static final RegistryObject<Item> TIME_GEM =
@@ -61,6 +71,20 @@ public class ModItems {
                     () -> new Item(new Item.Properties()
                             .tab(ModCreativeModeTab.DEATHCUBE_MISC_TAB)
                             .rarity(Rarity.UNCOMMON)
+                    ));
+    public static final RegistryObject<Item> ECHO_AMETHYST_SHARD =
+            ITEMS.register("echo_amethyst_shard",
+                    () -> new Item(new Item.Properties()
+                            .tab(ModCreativeModeTab.DEATHCUBE_MISC_TAB)
+                            .rarity(Rarity.RARE)
+                            .fireResistant()
+                    ));
+    public static final RegistryObject<Item> ECHO_AMETHYST_INGOT =
+            ITEMS.register("echo_amethyst_ingot",
+                    () -> new Item(new Item.Properties()
+                            .tab(ModCreativeModeTab.DEATHCUBE_MISC_TAB)
+                            .rarity(Rarity.RARE)
+                            .fireResistant()
                     ));
     public static final RegistryObject<Item> ENDER_DRAGON_SCALE =
             ITEMS.register("ender_dragon_scale",
@@ -74,14 +98,12 @@ public class ModItems {
                             .tab(ModCreativeModeTab.DEATHCUBE_MISC_TAB)
                             .rarity(Rarity.UNCOMMON)
                     ));
-    public static final RegistryObject<Item> CHERRY_SIGN =
-            ITEMS.register("cherry_sign",
-                    () -> new SignItem(new Item.Properties()
-                            .tab(ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB)
-                            .stacksTo(16),
-                            ModBlocks.CHERRY_SIGN.get(),
-                            ModBlocks.CHERRY_WALL_SIGN.get()
-                    ));
+    /*public static final RegistryObject<Item> CHERRY_BOAT =
+            ITEMS.register("cherry_boat",
+                    () -> new BoatItem(false, ModBoatEntity.Type.CHERRY, new Item.Properties()
+                            .tab(ModCreativeModeTab.DEATHCUBE_MISC_TAB)
+                            .stacksTo(1)
+                    ));*/
     //endregion
 
     //region Log Armors

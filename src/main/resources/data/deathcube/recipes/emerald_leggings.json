@@ -1,8 +1,9 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "deathcube:matter_manipulation_shaped",
   "key": {
     "X": {
-      "item": "minecraft:emerald"
+      "item": "minecraft:emerald",
+      "count": 8
     }
   },
   "pattern": [
@@ -10,6 +11,9 @@
     "X X",
     "X X"
   ],
+  "extra": {
+    "item": "minecraft:diamond_leggings"
+  },
   "result": {
     "item": "deathcube:emerald_leggings"
   }

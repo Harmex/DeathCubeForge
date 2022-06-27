@@ -1,11 +1,13 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "deathcube:matter_manipulation_shaped",
   "key": {
     "#": {
-      "item": "minecraft:stick"
+      "item": "minecraft:stick",
+      "count": 1
     },
     "X": {
-      "item": "minecraft:emerald"
+      "item": "minecraft:emerald",
+      "count": 8
     }
   },
   "pattern": [
@@ -13,6 +15,9 @@
     "X",
     "#"
   ],
+  "extra": {
+    "item": "minecraft:diamond_sword"
+  },
   "result": {
     "item": "deathcube:emerald_sword"
   }

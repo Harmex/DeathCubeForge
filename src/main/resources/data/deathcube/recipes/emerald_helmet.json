@@ -1,14 +1,18 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "deathcube:matter_manipulation_shaped",
   "key": {
     "X": {
-      "item": "minecraft:emerald"
+      "item": "minecraft:emerald",
+      "count": 8
     }
   },
   "pattern": [
     "XXX",
     "X X"
   ],
+  "extra": {
+    "item": "minecraft:diamond_helmet"
+  },
   "result": {
     "item": "deathcube:emerald_helmet"
   }

@@ -1,22 +1,27 @@
 package com.harmex.deathcube.integration;
 
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 import com.harmex.deathcube.DeathCube;
 import com.harmex.deathcube.block.ModBlocks;
 import com.harmex.deathcube.recipe.ShapedMatterManipulationRecipe;
+import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
-import mezz.jei.api.gui.ingredient.ICraftingGridHelper;
+import mezz.jei.api.gui.drawable.IDrawableAnimated;
+import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
@@ -28,10 +33,22 @@ public class MatterManipulatorRecipeCategory implements IRecipeCategory<ShapedMa
 
     private final IDrawable background;
     private final IDrawable icon;
+    private final LoadingCache<Integer, IDrawableAnimated> cachedArrows;
+    private final int regularManipulationTime;
 
-    public MatterManipulatorRecipeCategory(IGuiHelper helper) {
+    public MatterManipulatorRecipeCategory(IGuiHelper helper, int regularManipulationTime) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 148, 54);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModBlocks.MATTER_MANIPULATOR.get()));
+        this.cachedArrows = CacheBuilder.newBuilder()
+                .maximumSize(23)
+                .build(new CacheLoader<>() {
+                    @Override
+                    public @NotNull IDrawableAnimated load(@NotNull Integer manipulationTime) {
+                        return helper.drawableBuilder(TEXTURE, 0, 148, 22, 16)
+                                .buildAnimated(manipulationTime, IDrawableAnimated.StartDirection.LEFT, false);
+                    }
+                });
+        this.regularManipulationTime = regularManipulationTime;
     }
 
     @Override
@@ -55,17 +72,36 @@ public class MatterManipulatorRecipeCategory implements IRecipeCategory<ShapedMa
         return this.icon;
     }
 
+    protected IDrawableAnimated getArrow(ShapedMatterManipulationRecipe recipe) {
+        int manipulationTime = recipe.getManipulationTime();
+        if (manipulationTime <= 0) {
+            manipulationTime = regularManipulationTime;
+        }
+        return this.cachedArrows.getUnchecked(manipulationTime);
+    }
+
+    @Override
+    public void draw(@NotNull ShapedMatterManipulationRecipe recipe, @NotNull IRecipeSlotsView recipeSlotsView, @NotNull PoseStack stack, double mouseX, double mouseY) {
+        IDrawableAnimated arrow = getArrow(recipe);
+        arrow.draw(stack, 95, 19);
+
+        drawManipulationTime(recipe, stack, 45);
+    }
+
+    protected void drawManipulationTime(ShapedMatterManipulationRecipe recipe, PoseStack poseStack, int y) {
+        int manipulationTime = recipe.getManipulationTime();
+        if (manipulationTime > 0) {
+            int ManipulationTimeSeconds = manipulationTime / 20;
+            Component timeString = Component.translatable("gui.jei.deathcube.category.matter_manipulation_shaped.time.seconds", ManipulationTimeSeconds);
+            Minecraft minecraft = Minecraft.getInstance();
+            Font fontRenderer = minecraft.font;
+            int stringWidth = fontRenderer.width(timeString);
+            fontRenderer.draw(poseStack, timeString, background.getWidth() - stringWidth, y, 0xFF808080);
+        }
+    }
+
     @Override
     public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull ShapedMatterManipulationRecipe recipe, @Nonnull IFocusGroup focuses) {
-        //for(int i = 0; i < 3; ++i) {
-        //    for(int j = 0; j < 3; ++j) {
-        //        if ((j + i * 3) >= recipe.getIngredients().size()) {
-        //            builder.addSlot(RecipeIngredientRole.INPUT, 1 + j * 18, 1 + i * 18).addIngredients(Ingredient.EMPTY);
-        //        } else {
-        //            builder.addSlot(RecipeIngredientRole.INPUT, 1 + j * 18, 1 + i * 18).addIngredients(recipe.getIngredients().get(j + i * 3));
-        //        }
-        //    }
-        //}
         for(int i = 0; i <= 3 - recipe.getWidth(); ++i) {
             for (int j = 0; j <= 3 - recipe.getHeight(); ++j) {
                 this.addSlots(recipe, builder, i, j);
@@ -83,7 +119,7 @@ public class MatterManipulatorRecipeCategory implements IRecipeCategory<ShapedMa
                 int l = j - pHeight;
                 if (k >= 0 && l >= 0 && k < pRecipe.getWidth() && l < pRecipe.getHeight()) {
                     pBuilder.addSlot(RecipeIngredientRole.INPUT, 1 + k * 18, 1 + l * 18)
-                            .addIngredients(pRecipe.getIngredients().get(k + l * pRecipe.getWidth()));
+                            .addItemStack(pRecipe.getRecipeItemStacks().get(k + l * pRecipe.getWidth()));
                 }
             }
         }

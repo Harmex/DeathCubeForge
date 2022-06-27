@@ -45,6 +45,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.ENDER_DRAGON_SCALE.get());
         basicItem(ModItems.WARDEN_HEART.get());
         basicItem(ModItems.FRESH_WATER_BOTTLE.get());
+        basicItem(ModItems.ECHO_AMETHYST_SHARD.get());
+        basicItem(ModItems.ECHO_AMETHYST_INGOT.get());
         basicItem(ModItems.CHERRY.get());
         basicItem(ModItems.TIME_GEM_APPLE.get());
         basicItem(ModItems.DIAMOND_APPLE.get());

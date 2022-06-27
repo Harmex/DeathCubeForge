@@ -1,8 +1,9 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "deathcube:matter_manipulation_shaped",
   "key": {
     "X": {
-      "item": "minecraft:obsidian"
+      "item": "minecraft:obsidian",
+      "count": 8
     }
   },
   "pattern": [
@@ -10,6 +11,9 @@
     "XXX",
     "XXX"
   ],
+  "extra": {
+    "item": "minecraft:diamond_chestplate"
+  },
   "result": {
     "item": "deathcube:obsidian_chestplate"
   }

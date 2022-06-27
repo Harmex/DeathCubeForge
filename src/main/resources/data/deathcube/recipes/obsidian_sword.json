@@ -2,15 +2,13 @@
   "type": "deathcube:matter_manipulation_shaped",
   "key": {
     "#": {
-      "item": "minecraft:blaze_rod"
+      "item": "minecraft:blaze_rod",
+      "count": 8
     },
     "X": {
-      "item": "minecraft:obsidian"
+      "item": "minecraft:obsidian",
+      "count": 8
     }
-  },
-  "count": {
-    "#": 8,
-    "X": 8
   },
   "pattern": [
     "X",

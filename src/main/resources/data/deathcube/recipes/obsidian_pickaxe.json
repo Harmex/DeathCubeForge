@@ -1,11 +1,13 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "deathcube:matter_manipulation_shaped",
   "key": {
     "#": {
-      "item": "minecraft:stick"
+      "item": "minecraft:blaze_rod",
+      "count": 8
     },
     "X": {
-      "item": "minecraft:obsidian"
+      "item": "minecraft:obsidian",
+      "count": 8
     }
   },
   "pattern": [
@@ -13,6 +15,9 @@
     " # ",
     " # "
   ],
+  "extra": {
+    "item": "minecraft:diamond_pickaxe"
+  },
   "result": {
     "item": "deathcube:obsidian_pickaxe"
   }

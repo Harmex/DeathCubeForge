@@ -14,9 +14,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Objects;
 
 public class TotemOfResurrectionItem extends Item {
     public TotemOfResurrectionItem() {
@@ -29,17 +31,17 @@ public class TotemOfResurrectionItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+    public void appendHoverText(@NotNull ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
         if (!Screen.hasShiftDown()){
             pTooltipComponents.add(Component.translatable("tooltip.deathcube.shift").withStyle(ChatFormatting.GRAY));
         } else {
-            pTooltipComponents.add(Component.translatable("tooltip.deathcube.tor.0").withStyle(ChatFormatting.GRAY));
+            pTooltipComponents.add(Component.translatable("tooltip.deathcube.totem_of_resurrection").withStyle(ChatFormatting.GRAY));
         }
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
-        pPlayer.getAttribute(Attributes.MAX_HEALTH).setBaseValue(20.0);
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, Player pPlayer, @NotNull InteractionHand pUsedHand) {
+        Objects.requireNonNull(pPlayer.getAttribute(Attributes.MAX_HEALTH)).setBaseValue(20.0);
         pPlayer.setHealth(20.0f);
         return InteractionResultHolder.success(pPlayer.getItemInHand(pUsedHand));
     }

@@ -14,18 +14,14 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.SimpleMenuProvider;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.util.ITeleporter;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -41,11 +37,10 @@ public class TimeWandItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, @NotNull List<Component> pTooltipComponents, @NotNull TooltipFlag pIsAdvanced) {
         if (pStack.hasTag()) {
             assert pStack.getTag() != null;
             if (pStack.getTag().contains("deathcube.saved_dim") || pStack.getTag().contains("deathcube.saved_pos")) {
-                pTooltipComponents.add(Component.empty());
                 pTooltipComponents.add(Component.translatable("tooltip.deathcube.time_wand.saved_pos").withStyle(ChatFormatting.GRAY));
             }
             if (pStack.getTag().contains("deathcube.saved_dim")) {
@@ -64,7 +59,7 @@ public class TimeWandItem extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level pLevel, Player pPlayer, @NotNull InteractionHand pUsedHand) {
         ItemStack itemStack = pPlayer.getItemInHand(pUsedHand);
         if (!pPlayer.isShiftKeyDown()) {
             if (itemStack.getItem() instanceof TimeWandItem) {
@@ -91,6 +86,7 @@ public class TimeWandItem extends Item {
                         int[] savedPos = itemStack.getTag().getIntArray("deathcube.saved_pos");
 
                         pPlayer.teleportTo(savedPos[0] + 0.5, savedPos[1], savedPos[2] + 0.5);
+                        pPlayer.getCooldowns().addCooldown(this, 1200);
 
                         return InteractionResultHolder.success(itemStack);
                     } else {
@@ -107,10 +103,12 @@ public class TimeWandItem extends Item {
     }
 
     @Override
-    public InteractionResult useOn(UseOnContext pContext) {
+    public @NotNull InteractionResult useOn(UseOnContext pContext) {
         Level level = pContext.getLevel();
         Player player = pContext.getPlayer();
-
+        if (player == null) {
+            return InteractionResult.PASS;
+        }
         if (player.isShiftKeyDown()) {
             BlockPos blockPos = pContext.getClickedPos();
             Direction clickedFace = pContext.getClickedFace();

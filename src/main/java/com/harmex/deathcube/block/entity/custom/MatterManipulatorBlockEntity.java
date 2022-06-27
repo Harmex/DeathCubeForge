@@ -39,25 +39,18 @@ public class MatterManipulatorBlockEntity extends BlockEntity implements MenuPro
     protected final ContainerData dataAccess = new ContainerData() {
         @Override
         public int get(int pIndex) {
-            switch (pIndex) {
-                case 0:
-                    return MatterManipulatorBlockEntity.this.manipulationProgress;
-                case 1:
-                    return MatterManipulatorBlockEntity.this.manipulationTimeTotal;
-                default:
-                    return 0;
-            }
+            return switch (pIndex) {
+                case 0 -> MatterManipulatorBlockEntity.this.manipulationProgress;
+                case 1 -> MatterManipulatorBlockEntity.this.manipulationTimeTotal;
+                default -> 0;
+            };
         }
 
         @Override
         public void set(int pIndex, int pValue) {
             switch (pIndex) {
-                case 0:
-                    MatterManipulatorBlockEntity.this.manipulationProgress = pValue;
-                    break;
-                case 1:
-                    MatterManipulatorBlockEntity.this.manipulationTimeTotal = pValue;
-                    break;
+                case 0 -> MatterManipulatorBlockEntity.this.manipulationProgress = pValue;
+                case 1 -> MatterManipulatorBlockEntity.this.manipulationTimeTotal = pValue;
             }
         }
 
@@ -81,7 +74,7 @@ public class MatterManipulatorBlockEntity extends BlockEntity implements MenuPro
     }
 
     @Override
-    public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
+    public AbstractContainerMenu createMenu(int pContainerId, @NotNull Inventory pInventory, @NotNull Player pPlayer) {
         return new MatterManipulatorMenu(pContainerId, pInventory, this, this.dataAccess);
     }
 
@@ -115,7 +108,7 @@ public class MatterManipulatorBlockEntity extends BlockEntity implements MenuPro
     }
 
     @Override
-    public void load(CompoundTag pTag) {
+    public void load(@NotNull CompoundTag pTag) {
         super.load(pTag);
         itemHandler.deserializeNBT(pTag.getCompound("inventory"));
         manipulationProgress = pTag.getInt("ManipulationTime");
@@ -128,7 +121,9 @@ public class MatterManipulatorBlockEntity extends BlockEntity implements MenuPro
             inventory.setItem(i, itemHandler.getStackInSlot(i));
         }
 
-        Containers.dropContents(this.level, this.worldPosition, inventory);
+        if (this.level != null) {
+            Containers.dropContents(this.level, this.worldPosition, inventory);
+        }
     }
 
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState, MatterManipulatorBlockEntity pBlockEntity) {
@@ -154,17 +149,6 @@ public class MatterManipulatorBlockEntity extends BlockEntity implements MenuPro
         Optional<ShapedMatterManipulationRecipe> match = level.getRecipeManager()
                 .getRecipeFor(ShapedMatterManipulationRecipe.Type.INSTANCE, inventory, level);
 
-                /*if (level.getServer() != null && match.isPresent()) {
-                    if (level.getServer().getPlayerList().getPlayerByName("Dev") != null) {
-                        if (level.getServer().getPlayerList().getPlayerByName("Dev").getItemInHand(InteractionHand.MAIN_HAND) != null) {
-                            level.getServer().getPlayerList().getPlayerByName("Dev")
-                                    .getItemInHand(InteractionHand.MAIN_HAND).setHoverName(
-                                    Component.literal("" + match.get().getManipulationTime()));
-                        }
-
-                    }
-                }*/
-
         if (match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem())) {
             pBlockEntity.manipulationTimeTotal = match.get().getManipulationTime();
@@ -187,7 +171,7 @@ public class MatterManipulatorBlockEntity extends BlockEntity implements MenuPro
 
         if(match.isPresent()) {
             for (int i = 0; i < pBlockEntity.itemHandler.getSlots(); i++) {
-                pBlockEntity.itemHandler.extractItem(i, 1, false);
+                pBlockEntity.itemHandler.extractItem(i, 8, false);
             }
 
             pBlockEntity.itemHandler.insertItem(10, match.get().getResultItem(), false);

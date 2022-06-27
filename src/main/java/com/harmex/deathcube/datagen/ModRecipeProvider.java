@@ -4,12 +4,11 @@ import com.harmex.deathcube.block.ModBlocks;
 import com.harmex.deathcube.item.ModItems;
 import com.harmex.deathcube.util.ModTags;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
 
@@ -66,30 +65,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.COPPER_HOE.get(),
                 Items.COPPER_INGOT,
                 "has_copper_ingot");
-        toolAndArmorRecipes(pFinishedRecipeConsumer,
-                ModItems.EMERALD_HELMET.get(),
-                ModItems.EMERALD_CHESTPLATE.get(),
-                ModItems.EMERALD_LEGGINGS.get(),
-                ModItems.EMERALD_BOOTS.get(),
-                ModItems.EMERALD_SWORD.get(),
-                ModItems.EMERALD_PICKAXE.get(),
-                ModItems.EMERALD_AXE.get(),
-                ModItems.EMERALD_SHOVEL.get(),
-                ModItems.EMERALD_HOE.get(),
-                Items.EMERALD,
-                "has_emerald");
-        toolAndArmorRecipes(pFinishedRecipeConsumer,
-                ModItems.OBSIDIAN_HELMET.get(),
-                ModItems.OBSIDIAN_CHESTPLATE.get(),
-                ModItems.OBSIDIAN_LEGGINGS.get(),
-                ModItems.OBSIDIAN_BOOTS.get(),
-                ModItems.OBSIDIAN_SWORD.get(),
-                ModItems.OBSIDIAN_PICKAXE.get(),
-                ModItems.OBSIDIAN_AXE.get(),
-                ModItems.OBSIDIAN_SHOVEL.get(),
-                ModItems.OBSIDIAN_HOE.get(),
-                Items.OBSIDIAN,
-                "has_obsidian");
         //endregion
 
         //region Armors
@@ -168,6 +143,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         shapedRecipes(pFinishedRecipeConsumer);
         shapelessRecipes(pFinishedRecipeConsumer);
+        cookingRecipes(pFinishedRecipeConsumer);
     }
 
     private void applesRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer,
@@ -288,28 +264,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     private void shapedRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
-        //Time Wand
-        ShapedRecipeBuilder.shaped(ModItems.TIME_WAND.get())
-                .define('D', Items.DIAMOND)
-                .define('T', ModItems.TIME_GEM.get())
-                .define('#', Items.STICK)
-                .define('E', Items.EMERALD)
-                .pattern("DTD")
-                .pattern(" # ")
-                .pattern(" E ")
-                .unlockedBy("has_time_gem", has(ModItems.TIME_GEM.get()))
-                .save(pFinishedRecipeConsumer);
-
-        //Ender Bag
-        ShapedRecipeBuilder.shaped(ModItems.ENDER_BAG.get())
-                .define('#', Items.OBSIDIAN)
-                .define('T', ModItems.TIME_GEM.get())
-                .define('E', Items.ENDER_CHEST)
-                .pattern("###")
-                .pattern("TET")
-                .pattern("###")
-                .unlockedBy("has_time_gem", has(ModItems.TIME_GEM.get()))
-                .save(pFinishedRecipeConsumer);
 
         //region Cherry Furniture
         ShapedRecipeBuilder.shaped(ModBlocks.CHERRY_DOOR.get(), 3)
@@ -373,6 +327,26 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_cherry_planks", has(ModBlocks.CHERRY_PLANKS.get()))
                 .save(pFinishedRecipeConsumer);
         //endregion
+
+        //region Echo Amethyst
+        ShapedRecipeBuilder.shaped(ModItems.ECHO_AMETHYST_SHARD.get(), 8)
+                .define('#', Items.ECHO_SHARD)
+                .define('X', Items.AMETHYST_SHARD)
+                .pattern("XXX")
+                .pattern("X#X")
+                .pattern("XXX")
+                .unlockedBy("has_echo_shard", has(Items.ECHO_SHARD))
+                .save(pFinishedRecipeConsumer);
+        //endregion
+
+        ShapedRecipeBuilder.shaped(ModBlocks.MATTER_MANIPULATOR.get(), 1)
+                .define('#', ModItems.ECHO_AMETHYST_INGOT.get())
+                .define('X', Blocks.CRAFTING_TABLE)
+                .pattern("XXX")
+                .pattern("X#X")
+                .pattern("XXX")
+                .unlockedBy("has_echo_shard", has(Items.ECHO_SHARD))
+                .save(pFinishedRecipeConsumer);
     }
     private void shapelessRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
         //Cherry Furniture
@@ -385,6 +359,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.CHERRY_PLANKS.get())
                 .group("wooden_button")
                 .unlockedBy("has_cherry_planks", has(ModBlocks.CHERRY_PLANKS.get()))
+                .save(pFinishedRecipeConsumer);
+    }
+    private void cookingRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
+        SimpleCookingRecipeBuilder.blasting(Ingredient.of(ModItems.ECHO_AMETHYST_SHARD.get()),
+                ModItems.ECHO_AMETHYST_INGOT.get(), 0.8F, 200)
+                .unlockedBy("has_echo_shard", has(Items.ECHO_SHARD))
                 .save(pFinishedRecipeConsumer);
     }
 }

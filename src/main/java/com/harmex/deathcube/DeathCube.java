@@ -5,6 +5,7 @@ import com.harmex.deathcube.block.entity.ModBlockEntities;
 import com.harmex.deathcube.block.entity.ModWoodTypes;
 import com.harmex.deathcube.config.DeathCubeClientConfigs;
 import com.harmex.deathcube.config.DeathCubeCommonConfigs;
+import com.harmex.deathcube.entity.ModEntityTypes;
 import com.harmex.deathcube.item.ModItems;
 import com.harmex.deathcube.painting.ModPaintings;
 import com.harmex.deathcube.potion.ModPotions;
@@ -32,16 +33,17 @@ public class DeathCube {
     public DeathCube() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModItems.register(modEventBus);
 
-        ModPaintings.register(modEventBus);
 
         ModBlocks.register(modEventBus);
+        ModItems.register(modEventBus);
+        ModEntityTypes.register(modEventBus);
+        ModPotions.register(modEventBus);
+        ModPaintings.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
 
-        ModPotions.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

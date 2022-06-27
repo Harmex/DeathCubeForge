@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 200,
+  "experience": 0.8,
+  "ingredient": {
+    "item": "deathcube:echo_amethyst_shard"
+  },
+  "result": "deathcube:echo_amethyst_ingot"
+}

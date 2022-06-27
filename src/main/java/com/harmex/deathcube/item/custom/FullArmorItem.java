@@ -1,7 +1,9 @@
 package com.harmex.deathcube.item.custom;
 
 import com.google.common.collect.ImmutableMap;
+import com.harmex.deathcube.config.DeathCubeCommonConfigs;
 import com.harmex.deathcube.item.ModArmorMaterials;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -12,14 +14,19 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 import java.util.Map;
+import java.util.Random;
 
 public abstract class FullArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
         (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
                 .put(ModArmorMaterials.EMERALD,
-                        new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 200, 0))
+                        new MobEffectInstance(MobEffects.HERO_OF_THE_VILLAGE, 20, 0,
+                                true, true))
+
                 .put(ModArmorMaterials.OBSIDIAN,
-                        new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 200, 0))
+                        new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 20, 0,
+                                true, true))
+
                 .build();
 
     public FullArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
@@ -50,9 +57,44 @@ public abstract class FullArmorItem extends ArmorItem {
                                             MobEffectInstance mapStatusEffect) {
         boolean hasPlayerEffect = player.hasEffect(mapStatusEffect.getEffect());
 
-        if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
-            player.addEffect(new MobEffectInstance(mapStatusEffect.getEffect(),
-                    mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier()));
+        // Effect
+        // Emerald
+        if (mapArmorMaterial == ModArmorMaterials.EMERALD) {
+            if (DeathCubeCommonConfigs.EMERALD_ARMOR_EFFECT.get()) {
+                if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
+                    player.addEffect(new MobEffectInstance(mapStatusEffect.getEffect(),
+                            mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier()));
+                }
+            }
+        }
+        // Obsidian
+        if (mapArmorMaterial == ModArmorMaterials.OBSIDIAN) {
+            if (DeathCubeCommonConfigs.OBSIDIAN_ARMOR_EFFECT.get()) {
+                if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
+                    player.addEffect(new MobEffectInstance(mapStatusEffect.getEffect(),
+                            mapStatusEffect.getDuration(), mapStatusEffect.getAmplifier()));
+                }
+            }
+        }
+
+        // Decay
+        // Emerald
+        if (mapArmorMaterial == ModArmorMaterials.EMERALD) {
+            if (!player.isCreative() && !player.isSpectator()
+                    && DeathCubeCommonConfigs.EMERALD_ARMOR_DECAY.get()) {
+                if(new Random().nextFloat() < 0.01f) {
+                    player.getInventory().hurtArmor(DamageSource.MAGIC, 1f, new int[]{0, 1, 2, 3});
+                }
+            }
+        }
+        // Obsidian
+        if (mapArmorMaterial == ModArmorMaterials.OBSIDIAN) {
+            if (!player.isCreative() && !player.isSpectator()
+                    && DeathCubeCommonConfigs.OBSIDIAN_ARMOR_DECAY.get()) {
+                if(new Random().nextFloat() < 0.01f) {
+                    player.getInventory().hurtArmor(DamageSource.MAGIC, 1f, new int[]{0, 1, 2, 3});
+                }
+            }
         }
     }
 
