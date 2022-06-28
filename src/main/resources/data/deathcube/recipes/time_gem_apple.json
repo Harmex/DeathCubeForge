@@ -1,19 +1,20 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "deathcube:matter_manipulation_shaped",
   "key": {
     "#": {
-      "item": "deathcube:time_gem"
-    },
-    "X": {
       "item": "minecraft:apple"
     }
   },
   "pattern": [
     "###",
-    "#X#",
+    "# #",
     "###"
   ],
+  "extra": {
+    "item": "deathcube:time_gem"
+  },
   "result": {
-    "item": "deathcube:time_gem_apple"
+    "item": "deathcube:time_gem_apple",
+    "count": 8
   }
 }

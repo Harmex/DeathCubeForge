@@ -1,6 +1,17 @@
 {
   "replace": false,
   "values": [
-    "deathcube:harmex_logo"
+    "deathcube:harmex_logo",
+    "deathcube:thomas_head",
+    "deathcube:shemoi_head",
+    "deathcube:noss_head",
+    "deathcube:chamouz_head",
+    "deathcube:wrodka_head",
+    "deathcube:moon_head",
+    "deathcube:lydead_head",
+    "deathcube:zazadoc_head",
+    "deathcube:hakara_head",
+    "deathcube:marvis_head",
+    "deathcube:harmex_head"
   ]
 }

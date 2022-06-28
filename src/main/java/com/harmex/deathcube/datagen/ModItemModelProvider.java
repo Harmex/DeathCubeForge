@@ -42,6 +42,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         //blockItem(ModBlocks.CHERRY_TRAPDOOR.get());
         blockItem(ModBlocks.CHERRY_FENCE_GATE.get());
         basicItem(ModItems.CHERRY_SIGN.get());
+        basicItem(ModItems.CHERRY_BOAT.get());
 
         basicItem(ModItems.ENDER_DRAGON_SCALE.get());
         basicItem(ModItems.WARDEN_HEART.get());

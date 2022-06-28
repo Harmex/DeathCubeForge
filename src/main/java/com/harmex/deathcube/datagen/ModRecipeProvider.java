@@ -23,10 +23,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildCraftingRecipes(@NotNull Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
         //region Apples
         applesRecipes(pFinishedRecipeConsumer,
-                ModItems.TIME_GEM_APPLE.get(),
-                ModItems.TIME_GEM.get(),
-                "has_time_gem");
-        applesRecipes(pFinishedRecipeConsumer,
                 ModItems.DIAMOND_APPLE.get(),
                 Items.DIAMOND,
                 "has_diamond");

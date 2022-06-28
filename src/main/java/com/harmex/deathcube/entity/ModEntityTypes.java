@@ -1,7 +1,7 @@
 package com.harmex.deathcube.entity;
 
 import com.harmex.deathcube.DeathCube;
-import com.harmex.deathcube.entity.custom.ModBoatEntity;
+import com.harmex.deathcube.entity.custom.ModBoat;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -12,12 +12,15 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModEntityTypes {
-    public static DeferredRegister<EntityType<?>> ENTITY_TYPES =
+    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(ForgeRegistries.ENTITIES, DeathCube.MODID);
 
-    public static final RegistryObject<EntityType<ModBoatEntity>> CHERRY_BOAT =
+    public static final RegistryObject<EntityType<Boat>> CHERRY_BOAT =
             ENTITY_TYPES.register("cherry_boat",
-                    () -> EntityType.Builder.of(ModBoatEntity::new, MobCategory.MISC)
+                    () -> EntityType.Builder.<Boat>of(ModBoat::new, MobCategory.MISC)
+                            .sized(1.375F, 0.5625F)
+                            .setCustomClientFactory((spawnEntity, level) -> new ModBoat(level))
+                            .clientTrackingRange(10)
                             .build(new ResourceLocation(DeathCube.MODID, "cherry_boat").toString())
             );
 

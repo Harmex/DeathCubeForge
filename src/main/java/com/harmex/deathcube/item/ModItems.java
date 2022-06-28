@@ -2,15 +2,16 @@ package com.harmex.deathcube.item;
 
 import com.harmex.deathcube.DeathCube;
 import com.harmex.deathcube.block.ModBlocks;
-import com.harmex.deathcube.entity.custom.ModBoatEntity;
+import com.harmex.deathcube.entity.custom.ModBoat;
 import com.harmex.deathcube.item.custom.*;
-import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.NotNull;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -35,25 +36,45 @@ public class ModItems {
                             .tab(ModCreativeModeTab.DEATHCUBE_FOODS_TAB)
                             .food(ModFoods.TIME_GEM_APPLE)
                             .rarity(Rarity.UNCOMMON)
-                    ));
+                    ) {
+                        @Override
+                        public boolean isFoil(@NotNull ItemStack pStack) {
+                            return true;
+                        }
+                    });
     public static final RegistryObject<Item> DIAMOND_APPLE =
             ITEMS.register("diamond_apple",
                     () -> new AppleItem(new Item.Properties()
                             .food(ModFoods.DIAMOND_APPLE)
                             .rarity(Rarity.UNCOMMON)
-                    ));
+                    ) {
+                        @Override
+                        public boolean isFoil(@NotNull ItemStack pStack) {
+                            return true;
+                        }
+                    });
     public static final RegistryObject<Item> NETHERITE_APPLE =
             ITEMS.register("netherite_apple",
                     () -> new AppleItem(new Item.Properties()
                             .food(ModFoods.NETHERITE_APPLE)
                             .rarity(Rarity.RARE)
-                    ));
+                    ) {
+                        @Override
+                        public boolean isFoil(@NotNull ItemStack pStack) {
+                            return true;
+                        }
+                    });
     public static final RegistryObject<Item> BEDROCK_APPLE =
             ITEMS.register("bedrock_apple",
                     () -> new AppleItem(new Item.Properties()
                             .food(ModFoods.BEDROCK_APPLE)
                             .rarity(Rarity.EPIC)
-                    ));
+                    ) {
+                        @Override
+                        public boolean isFoil(@NotNull ItemStack pStack) {
+                            return true;
+                        }
+                    });
     //endregion
     
     //region Misc
