@@ -1,4 +1,4 @@
-package com.harmex.deathcube.integration;
+package com.harmex.deathcube.integration.jei;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;

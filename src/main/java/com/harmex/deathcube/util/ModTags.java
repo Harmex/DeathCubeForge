@@ -27,6 +27,9 @@ public class ModTags {
         public static final TagKey<Item> CHERRY_LOGS =
                 tag("cherry_logs");
 
+        public static final TagKey<Item> DIAMOND_SET =
+                tag("diamond_set");
+
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(DeathCube.MODID, name));
         }

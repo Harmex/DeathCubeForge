@@ -1,8 +1,7 @@
-package com.harmex.deathcube.integration;
+package com.harmex.deathcube.integration.jei;
 
 import com.harmex.deathcube.DeathCube;
 import com.harmex.deathcube.block.ModBlocks;
-import com.harmex.deathcube.recipe.ModRecipes;
 import com.harmex.deathcube.recipe.ShapedMatterManipulationRecipe;
 import com.harmex.deathcube.screen.MatterManipulatorMenu;
 import com.harmex.deathcube.screen.ModMenuTypes;

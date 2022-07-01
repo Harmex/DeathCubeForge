@@ -29,7 +29,7 @@ displayName="DeathCube" #mandatory
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="deathcube.png" #optional
 # A text field displayed in the mod UI
-credits="Merci à Shemoi, Thomas67si & DrNossTV" #optional
+credits="Merci à Shemoi & Thomas67si 👌" #optional
 # A text field displayed in the mod UI
 authors="Harmex" #optional
 # Display Test controls the display for your mod in the server connection screen

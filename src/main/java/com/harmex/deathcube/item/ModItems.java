@@ -2,10 +2,8 @@ package com.harmex.deathcube.item;
 
 import com.harmex.deathcube.DeathCube;
 import com.harmex.deathcube.block.ModBlocks;
-import com.harmex.deathcube.entity.custom.ModBoat;
 import com.harmex.deathcube.item.custom.*;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
