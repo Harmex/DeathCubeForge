@@ -34,12 +34,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.CHERRY_WOOD.get());
         blockItem(ModBlocks.CHERRY_LEAVES.get());
         blockItem(ModBlocks.CHERRY_SLAB.get());
-        //blockItem(ModBlocks.CHERRY_FENCE.get());
+        fenceItem(ModBlocks.CHERRY_FENCE.get());
         blockItem(ModBlocks.CHERRY_STAIRS.get());
-        //blockItem(ModBlocks.CHERRY_BUTTON.get());
+        buttonItem(ModBlocks.CHERRY_BUTTON.get());
         blockItem(ModBlocks.CHERRY_PRESSURE_PLATE.get());
-        //basicItem(ModBlocks.CHERRY_DOOR.get().asItem());
-        //blockItem(ModBlocks.CHERRY_TRAPDOOR.get());
+        basicItem(ModBlocks.CHERRY_DOOR.get().asItem());
+        trapdoorItem(ModBlocks.CHERRY_TRAPDOOR.get());
         blockItem(ModBlocks.CHERRY_FENCE_GATE.get());
         basicItem(ModItems.CHERRY_SIGN.get());
 
@@ -167,5 +167,32 @@ public class ModItemModelProvider extends ItemModelProvider {
     public ItemModelBuilder blockItem(ResourceLocation block) {
         return getBuilder(block.getPath())
                 .parent(new ModelFile.UncheckedModelFile(block.getNamespace() + ":block/" + block.getPath()));
+    }
+
+    private ItemModelBuilder fenceItem(Block block) {
+        return fenceItem(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)));
+    }
+
+    public ItemModelBuilder fenceItem(ResourceLocation block) {
+        return getBuilder(block.getPath())
+                .parent(new ModelFile.UncheckedModelFile(block.getNamespace() + ":block/" + block.getPath() + "_inventory"));
+    }
+
+    private ItemModelBuilder buttonItem(Block block) {
+        return buttonItem(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)));
+    }
+
+    public ItemModelBuilder buttonItem(ResourceLocation block) {
+        return getBuilder(block.getPath())
+                .parent(new ModelFile.UncheckedModelFile(block.getNamespace() + ":block/" + block.getPath() + "_inventory"));
+    }
+
+    private ItemModelBuilder trapdoorItem(Block block) {
+        return trapdoorItem(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block)));
+    }
+
+    public ItemModelBuilder trapdoorItem(ResourceLocation block) {
+        return getBuilder(block.getPath())
+                .parent(new ModelFile.UncheckedModelFile(block.getNamespace() + ":block/" + block.getPath() + "_bottom"));
     }
 }

@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "X": {
-      "item": "deathcube:cherry_log"
+      "item": "deathcube:cherry_wood"
     }
   },
   "pattern": [

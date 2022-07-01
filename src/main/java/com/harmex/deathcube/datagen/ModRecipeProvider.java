@@ -69,71 +69,71 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.OAK_CHESTPLATE.get(),
                 ModItems.OAK_LEGGINGS.get(),
                 ModItems.OAK_BOOTS.get(),
-                Items.OAK_LOG,
-                "has_oak_log");
+                Items.OAK_WOOD,
+                "has_oak_wood");
         armorRecipes(pFinishedRecipeConsumer,
                 ModItems.SPRUCE_HELMET.get(),
                 ModItems.SPRUCE_CHESTPLATE.get(),
                 ModItems.SPRUCE_LEGGINGS.get(),
                 ModItems.SPRUCE_BOOTS.get(),
-                Items.SPRUCE_LOG,
-                "has_spruce_log");
+                Items.SPRUCE_WOOD,
+                "has_spruce_wood");
         armorRecipes(pFinishedRecipeConsumer,
                 ModItems.BIRCH_HELMET.get(),
                 ModItems.BIRCH_CHESTPLATE.get(),
                 ModItems.BIRCH_LEGGINGS.get(),
                 ModItems.BIRCH_BOOTS.get(),
-                Items.BIRCH_LOG,
-                "has_birch_log");
+                Items.BIRCH_WOOD,
+                "has_birch_wood");
         armorRecipes(pFinishedRecipeConsumer,
                 ModItems.JUNGLE_HELMET.get(),
                 ModItems.JUNGLE_CHESTPLATE.get(),
                 ModItems.JUNGLE_LEGGINGS.get(),
                 ModItems.JUNGLE_BOOTS.get(),
-                Items.JUNGLE_LOG,
-                "has_jungle_log");
+                Items.JUNGLE_WOOD,
+                "has_jungle_wood");
         armorRecipes(pFinishedRecipeConsumer,
                 ModItems.ACACIA_HELMET.get(),
                 ModItems.ACACIA_CHESTPLATE.get(),
                 ModItems.ACACIA_LEGGINGS.get(),
                 ModItems.ACACIA_BOOTS.get(),
-                Items.ACACIA_LOG,
-                "has_acacia_log");
+                Items.ACACIA_WOOD,
+                "has_acacia_wood");
         armorRecipes(pFinishedRecipeConsumer,
                 ModItems.DARK_OAK_HELMET.get(),
                 ModItems.DARK_OAK_CHESTPLATE.get(),
                 ModItems.DARK_OAK_LEGGINGS.get(),
                 ModItems.DARK_OAK_BOOTS.get(),
-                Items.DARK_OAK_LOG,
-                "has_dark_oak_log");
+                Items.DARK_OAK_WOOD,
+                "has_dark_oak_wood");
         armorRecipes(pFinishedRecipeConsumer,
                 ModItems.MANGROVE_HELMET.get(),
                 ModItems.MANGROVE_CHESTPLATE.get(),
                 ModItems.MANGROVE_LEGGINGS.get(),
                 ModItems.MANGROVE_BOOTS.get(),
-                Items.MANGROVE_LOG,
-                "has_mangrove_log");
+                Items.MANGROVE_WOOD,
+                "has_mangrove_wood");
         armorRecipes(pFinishedRecipeConsumer,
                 ModItems.CHERRY_HELMET.get(),
                 ModItems.CHERRY_CHESTPLATE.get(),
                 ModItems.CHERRY_LEGGINGS.get(),
                 ModItems.CHERRY_BOOTS.get(),
-                ModBlocks.CHERRY_LOG.get().asItem(),
-                "has_cherry_log");
+                ModBlocks.CHERRY_WOOD.get().asItem(),
+                "has_cherry_wood");
         armorRecipes(pFinishedRecipeConsumer,
                 ModItems.CRIMSON_HELMET.get(),
                 ModItems.CRIMSON_CHESTPLATE.get(),
                 ModItems.CRIMSON_LEGGINGS.get(),
                 ModItems.CRIMSON_BOOTS.get(),
-                Items.CRIMSON_STEM,
-                "has_crimson_stem");
+                Items.CRIMSON_HYPHAE,
+                "has_crimson_hyphae");
         armorRecipes(pFinishedRecipeConsumer,
                 ModItems.WARPED_HELMET.get(),
                 ModItems.WARPED_CHESTPLATE.get(),
                 ModItems.WARPED_LEGGINGS.get(),
                 ModItems.WARPED_BOOTS.get(),
-                Items.WARPED_STEM,
-                "has_warped_stem");
+                Items.WARPED_HYPHAE,
+                "has_warped_hyphae");
         //endregion
 
 

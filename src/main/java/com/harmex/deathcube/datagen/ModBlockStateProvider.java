@@ -40,13 +40,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.CHERRY_LEAVES.get());
         slabBlock((SlabBlock) ModBlocks.CHERRY_SLAB.get(), blockTexture(ModBlocks.CHERRY_PLANKS.get()),
                 blockTexture(ModBlocks.CHERRY_PLANKS.get()));
-        //fenceBlock((FenceBlock) ModBlocks.CHERRY_FENCE.get(), blockTexture(ModBlocks.CHERRY_PLANKS.get()));
+        fenceBlock((FenceBlock) ModBlocks.CHERRY_FENCE.get(), blockTexture(ModBlocks.CHERRY_PLANKS.get()));
         stairsBlock((StairBlock) ModBlocks.CHERRY_STAIRS.get(), blockTexture(ModBlocks.CHERRY_PLANKS.get()));
-        //buttonBlock((ButtonBlock) ModBlocks.CHERRY_BUTTON.get(), blockTexture(ModBlocks.CHERRY_PLANKS.get()));
+        buttonBlock((ButtonBlock) ModBlocks.CHERRY_BUTTON.get(), blockTexture(ModBlocks.CHERRY_PLANKS.get()));
         pressurePlateBlock((PressurePlateBlock) ModBlocks.CHERRY_PRESSURE_PLATE.get(), blockTexture(ModBlocks.CHERRY_PLANKS.get()));
         //doorBlock((DoorBlock) ModBlocks.CHERRY_DOOR.get(), new ResourceLocation(DeathCube.MODID, "block/cherry_door_bottom"),
         //        new ResourceLocation(DeathCube.MODID, "block/cherry_door_top"))
-        //trapdoorBlock((TrapDoorBlock) ModBlocks.CHERRY_TRAPDOOR.get(), blockTexture(ModBlocks.CHERRY_PLANKS.get()), true);
+        trapdoorBlock((TrapDoorBlock) ModBlocks.CHERRY_TRAPDOOR.get(), blockTexture(ModBlocks.CHERRY_TRAPDOOR.get()), true);
         fenceGateBlock((FenceGateBlock) ModBlocks.CHERRY_FENCE_GATE.get(), blockTexture(ModBlocks.CHERRY_PLANKS.get()));
         signBlock((StandingSignBlock) ModBlocks.CHERRY_SIGN.get(), (WallSignBlock) ModBlocks.CHERRY_WALL_SIGN.get(),
                 blockTexture(ModBlocks.CHERRY_PLANKS.get()));

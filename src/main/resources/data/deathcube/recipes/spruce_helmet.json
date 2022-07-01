@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "X": {
-      "item": "minecraft:spruce_log"
+      "item": "minecraft:spruce_wood"
     }
   },
   "pattern": [

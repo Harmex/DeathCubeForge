@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cherry_log": {
+    "has_cherry_wood": {
       "conditions": {
         "items": [
           {
             "items": [
-              "deathcube:cherry_log"
+              "deathcube:cherry_wood"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_cherry_log",
+      "has_cherry_wood",
       "has_the_recipe"
     ]
   ],

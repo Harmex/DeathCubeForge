@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_birch_log": {
+    "has_birch_wood": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:birch_log"
+              "minecraft:birch_wood"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_birch_log",
+      "has_birch_wood",
       "has_the_recipe"
     ]
   ],

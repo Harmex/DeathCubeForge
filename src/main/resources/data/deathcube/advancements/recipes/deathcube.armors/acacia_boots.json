@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_acacia_log": {
+    "has_acacia_wood": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:acacia_log"
+              "minecraft:acacia_wood"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_acacia_log",
+      "has_acacia_wood",
       "has_the_recipe"
     ]
   ],
