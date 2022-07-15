@@ -79,7 +79,7 @@ public class MatterManipulatorMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_SLOT_COUNT = 11;  // must be the number of slots you have!
 
     @Override
-    public @NotNull ItemStack quickMoveStack(Player playerIn, int index) {
+    public @NotNull ItemStack quickMoveStack(@NotNull Player playerIn, int index) {
         Slot sourceSlot = slots.get(index);
         if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;  //EMPTY_ITEM
         ItemStack sourceStack = sourceSlot.getItem();

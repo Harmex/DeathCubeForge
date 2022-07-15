@@ -1,9 +1,7 @@
 package com.harmex.deathcube.screen;
 
 import com.harmex.deathcube.block.ModBlocks;
-import com.harmex.deathcube.block.entity.custom.MatterManipulatorBlockEntity;
 import com.harmex.deathcube.block.entity.custom.ResurrectionAltarBlockEntity;
-import com.harmex.deathcube.screen.slot.ModResultSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -15,6 +13,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
+import org.jetbrains.annotations.NotNull;
 
 public class ResurrectionAltarMenu extends AbstractContainerMenu {
     private final ResurrectionAltarBlockEntity blockEntity;
@@ -59,7 +58,7 @@ public class ResurrectionAltarMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_SLOT_COUNT = 1;  // must be the number of slots you have!
 
     @Override
-    public ItemStack quickMoveStack(Player playerIn, int index) {
+    public @NotNull ItemStack quickMoveStack(@NotNull Player playerIn, int index) {
         Slot sourceSlot = slots.get(index);
         if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;  //EMPTY_ITEM
         ItemStack sourceStack = sourceSlot.getItem();
@@ -92,7 +91,7 @@ public class ResurrectionAltarMenu extends AbstractContainerMenu {
     }
 
     @Override
-    public boolean stillValid(Player pPlayer) {
+    public boolean stillValid(@NotNull Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
                 pPlayer, ModBlocks.MATTER_MANIPULATOR.get());
     }

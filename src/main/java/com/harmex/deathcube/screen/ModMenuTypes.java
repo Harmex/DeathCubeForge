@@ -12,7 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS =
-            DeferredRegister.create(ForgeRegistries.CONTAINERS, DeathCube.MODID);
+            DeferredRegister.create(ForgeRegistries.MENU_TYPES, DeathCube.MODID);
 
 
     public static final RegistryObject<MenuType<MatterManipulatorMenu>> MATTER_MANIPULATOR_MENU =

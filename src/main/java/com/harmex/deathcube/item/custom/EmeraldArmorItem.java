@@ -26,7 +26,7 @@ public class EmeraldArmorItem extends ArmorItem {
 
     public EmeraldArmorItem(EquipmentSlot pSlot) {
         super(ModArmorMaterials.EMERALD, pSlot, new Item.Properties()
-                .tab(ModCreativeModeTab.DEATHCUBE_ARMOR_TAB)
+                .tab(ModCreativeModeTab.DEATHCUBE_ARMORS_TAB)
                 .rarity(ModRarities.EMERALD)
         );
     }

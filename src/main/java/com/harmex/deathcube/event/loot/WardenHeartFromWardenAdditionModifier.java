@@ -17,32 +17,34 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-// TODO : changer les global loot modifier
-public class EnderDragonScaleFromEnderDragonAdditionModifier extends LootModifier {
+public class WardenHeartFromWardenAdditionModifier extends LootModifier {
     private final Item addition;
 
-    protected EnderDragonScaleFromEnderDragonAdditionModifier(LootItemCondition[] conditionsIn, Item addition) {
+    protected WardenHeartFromWardenAdditionModifier(LootItemCondition[] conditionsIn, Item addition) {
         super(conditionsIn);
         this.addition = addition;
     }
 
     @Override
     protected @NotNull ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        generatedLoot.add(new ItemStack(addition, Mth.randomBetweenInclusive(RandomSource.create(), 24, 48)));
+        float chance = RandomSource.create().nextFloat();
+        if (chance < 0.75F) {
+            generatedLoot.add(new ItemStack(addition, 1));
+        }
         return generatedLoot;
     }
 
-    public static class Serializer extends GlobalLootModifierSerializer<EnderDragonScaleFromEnderDragonAdditionModifier> {
+    public static class Serializer extends GlobalLootModifierSerializer<WardenHeartFromWardenAdditionModifier> {
 
         @Override
-        public EnderDragonScaleFromEnderDragonAdditionModifier read(ResourceLocation location, JsonObject object, LootItemCondition[] ailootcondition) {
+        public WardenHeartFromWardenAdditionModifier read(ResourceLocation location, JsonObject object, LootItemCondition[] ailootcondition) {
             Item addition = ForgeRegistries.ITEMS.getValue(
                     new ResourceLocation(GsonHelper.getAsString(object, "addition")));
-            return new EnderDragonScaleFromEnderDragonAdditionModifier(ailootcondition, addition);
+            return new WardenHeartFromWardenAdditionModifier(ailootcondition, addition);
         }
 
         @Override
-        public JsonObject write(EnderDragonScaleFromEnderDragonAdditionModifier instance) {
+        public JsonObject write(WardenHeartFromWardenAdditionModifier instance) {
             JsonObject json = makeConditions(instance.conditions);
             json.addProperty("addition", Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(instance.addition)).toString());
             return json;

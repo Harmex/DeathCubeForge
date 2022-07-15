@@ -13,7 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
-            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, DeathCube.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, DeathCube.MODID);
 
 
     public static final RegistryObject<BlockEntityType<MatterManipulatorBlockEntity>> MATTER_MANIPULATOR_BLOCK_ENTITY =

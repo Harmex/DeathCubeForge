@@ -13,8 +13,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Objects;
-
 public class AppleItem extends Item {
     public AppleItem(Properties pProperties) {
         super(pProperties.tab(ModCreativeModeTab.DEATHCUBE_FOODS_TAB));

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "entries": [
-    "deathcube:ender_dragon_scale_from_ender_dragon"
+    "deathcube:ender_dragon_scale_from_ender_dragon",
+    "deathcube:warden_heart_from_warden"
   ]
 }

@@ -3,9 +3,9 @@ package com.harmex.deathcube.datagen;
 import com.harmex.deathcube.DeathCube;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 
 @Mod.EventBusSubscriber(modid = DeathCube.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
@@ -20,5 +20,6 @@ public class DataGenerators {
         generator.addProvider(true, new ModLootTableProvider(generator));
         generator.addProvider(true, new ModBlockStateProvider(generator, existingFileHelper));
         generator.addProvider(true, new ModItemModelProvider(generator, existingFileHelper));
+        generator.addProvider(true, new ModEN_USLanguageProvider(generator, "en_us"));
     }
 }

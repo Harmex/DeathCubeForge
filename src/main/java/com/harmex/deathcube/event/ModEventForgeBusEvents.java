@@ -14,9 +14,4 @@ import java.util.Objects;
 @Mod.EventBusSubscriber(modid = DeathCube.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModEventForgeBusEvents {
 
-    @SubscribeEvent
-    public static void playerTickEvent(final TickEvent.PlayerTickEvent event) {
-        Player player = event.player;
-
-    }
 }

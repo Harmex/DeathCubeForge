@@ -22,10 +22,12 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        //region Blocks
         blockItem(ModBlocks.ECHO_AMETHYST_BLOCK.get());
         blockItem(ModBlocks.MATTER_MANIPULATOR.get());
         blockItem(ModBlocks.RESURRECTION_ALTAR.get());
-
+        //endregion
+        //region Cherry Furniture
         blockItem(ModBlocks.CHERRY_PLANKS.get());
         plantItem(ModBlocks.CHERRY_SAPLING.get());
         blockItem(ModBlocks.CHERRY_LOG.get());
@@ -42,7 +44,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         trapdoorItem(ModBlocks.CHERRY_TRAPDOOR.get());
         blockItem(ModBlocks.CHERRY_FENCE_GATE.get());
         basicItem(ModItems.CHERRY_SIGN.get());
-
+        //endregion
+        //region Misc.
         basicItem(ModItems.ENDER_DRAGON_SCALE.get());
         basicItem(ModItems.WARDEN_HEART.get());
         basicItem(ModItems.FRESH_WATER_BOTTLE.get());
@@ -57,7 +60,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.TIME_GEM.get());
         handheldItem(ModItems.TIME_WAND.get());
         basicItem(ModItems.ENDER_BAG.get());
-
+        spawnEggItem(ModItems.GALTERIUS_SPAWN_EGG.get());
+        //endregion
+        //region Wooden Armors
         basicItem(ModItems.OAK_HELMET.get());
         basicItem(ModItems.OAK_CHESTPLATE.get());
         basicItem(ModItems.OAK_LEGGINGS.get());
@@ -98,7 +103,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.WARPED_CHESTPLATE.get());
         basicItem(ModItems.WARPED_LEGGINGS.get());
         basicItem(ModItems.WARPED_BOOTS.get());
+        //endregion
 
+        //region Bone Set
         basicItem(ModItems.BONE_HELMET.get());
         basicItem(ModItems.BONE_CHESTPLATE.get());
         basicItem(ModItems.BONE_LEGGINGS.get());
@@ -108,7 +115,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.BONE_AXE.get());
         handheldItem(ModItems.BONE_SHOVEL.get());
         handheldItem(ModItems.BONE_HOE.get());
-
+        //endregion
+        //region Copper Set
         basicItem(ModItems.COPPER_HELMET.get());
         basicItem(ModItems.COPPER_CHESTPLATE.get());
         basicItem(ModItems.COPPER_LEGGINGS.get());
@@ -118,7 +126,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.COPPER_AXE.get());
         handheldItem(ModItems.COPPER_SHOVEL.get());
         handheldItem(ModItems.COPPER_HOE.get());
-
+        //endregion
+        //region Emerald set
         basicItem(ModItems.EMERALD_HELMET.get());
         basicItem(ModItems.EMERALD_CHESTPLATE.get());
         basicItem(ModItems.EMERALD_LEGGINGS.get());
@@ -128,7 +137,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.EMERALD_AXE.get());
         handheldItem(ModItems.EMERALD_SHOVEL.get());
         handheldItem(ModItems.EMERALD_HOE.get());
-
+        //endregion
+        //region Obsidian Set
         basicItem(ModItems.OBSIDIAN_HELMET.get());
         basicItem(ModItems.OBSIDIAN_CHESTPLATE.get());
         basicItem(ModItems.OBSIDIAN_LEGGINGS.get());
@@ -138,6 +148,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.OBSIDIAN_AXE.get());
         handheldItem(ModItems.OBSIDIAN_SHOVEL.get());
         handheldItem(ModItems.OBSIDIAN_HOE.get());
+        //endregion
     }
 
     private ItemModelBuilder handheldItem(Item item) {
@@ -148,6 +159,15 @@ public class ModItemModelProvider extends ItemModelProvider {
         return getBuilder(item.toString())
                 .parent(new ModelFile.UncheckedModelFile("item/handheld"))
                 .texture("layer0", new ResourceLocation(item.getNamespace(), "item/" + item.getPath()));
+    }
+
+    private ItemModelBuilder spawnEggItem(Item item) {
+        return spawnEggItem(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)));
+    }
+
+    private ItemModelBuilder spawnEggItem(ResourceLocation item) {
+        return getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder plantItem(Block block) {

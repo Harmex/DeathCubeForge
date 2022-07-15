@@ -1,7 +1,6 @@
 package com.harmex.deathcube.block.entity.custom;
 
 import com.harmex.deathcube.block.entity.ModBlockEntities;
-import com.harmex.deathcube.item.ModItems;
 import com.harmex.deathcube.screen.ResurrectionAltarMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -13,7 +12,6 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -40,13 +38,13 @@ public class ResurrectionAltarBlockEntity extends BlockEntity implements MenuPro
     }
 
     @Override
-    public Component getDisplayName() {
+    public @NotNull Component getDisplayName() {
         return Component.translatable("container.deathcube.resurrection_altar");
     }
 
     @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
+    public AbstractContainerMenu createMenu(int pContainerId, @NotNull Inventory pInventory, @NotNull Player pPlayer) {
         return new ResurrectionAltarMenu(pContainerId, pInventory, this);
     }
 
@@ -78,7 +76,7 @@ public class ResurrectionAltarBlockEntity extends BlockEntity implements MenuPro
     }
 
     @Override
-    public void load(CompoundTag pTag) {
+    public void load(@NotNull CompoundTag pTag) {
         super.load(pTag);
         itemHandler.deserializeNBT(pTag.getCompound("inventory"));
     }
