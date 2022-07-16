@@ -72,6 +72,7 @@
   "item.deathcube.emerald_sword": "Emerald Sword",
   "item.deathcube.ender_bag": "Ender Bag",
   "item.deathcube.ender_dragon_scale": "Ender Dragon Scale",
+  "item.deathcube.fresh_water_bottle": "Fresh Water Bottle",
   "item.deathcube.jungle_boots": "Jungle Boots",
   "item.deathcube.jungle_chestplate": "Jungle Chestplate",
   "item.deathcube.jungle_helmet": "Jungle Helmet",
@@ -108,9 +109,9 @@
   "item.deathcube.warped_chestplate": "Warped Chestplate",
   "item.deathcube.warped_helmet": "Warped Helmet",
   "item.deathcube.warped_leggings": "Warped Leggings",
-  "itemGroup.deathcubearmors": "DeathCube | Armors",
-  "itemGroup.deathcubeblocks": "DeathCube | Blocks",
-  "itemGroup.deathcubefoods": "DeathCube | Foods",
-  "itemGroup.deathcubemisc": "DeathCube | Misc.",
-  "itemGroup.deathcubetools": "DeathCube | Tools"
+  "itemGroup.deathcube.armors": "DeathCube | Armors",
+  "itemGroup.deathcube.blocks": "DeathCube | Blocks",
+  "itemGroup.deathcube.foods": "DeathCube | Foods",
+  "itemGroup.deathcube.misc": "DeathCube | Misc.",
+  "itemGroup.deathcube.tools": "DeathCube | Tools"
 }
