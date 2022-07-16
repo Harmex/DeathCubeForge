@@ -34,7 +34,15 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
             ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.WARDEN);
     //endregion
-
+    //region Crop
+    public static final RegistryObject<Block> GOLDEN_CARROT_CROP = registerBlockWithoutBlockItem("golden_carrot_crop",
+            () -> new GoldenCarrotCropBlock(BlockBehaviour.Properties.of(Material.PLANT)
+                    .noCollission()
+                    .randomTicks()
+                    .instabreak()
+                    .sound(SoundType.CROP)
+            ));
+    //endregion
     //region Entity
     public static final RegistryObject<Block> MATTER_MANIPULATOR = registerBlock("matter_manipulator",
             () -> new MatterManipulatorBlock(BlockBehaviour.Properties.of(Material.METAL)
