@@ -25,25 +25,7 @@ public class ModItems {
 
     //region Foods
     public static final RegistryObject<Item> FRESH_WATER_BOTTLE =
-            ITEMS.register("fresh_water_bottle",
-                    () -> new Item(new Item.Properties()
-                            .tab(ModCreativeModeTab.DEATHCUBE_FOODS_TAB)
-                    ) {
-                        @Override
-                        public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
-                            if (!pLevel.isClientSide()) {
-                                if (pUsedHand == InteractionHand.MAIN_HAND) {
-                                    pPlayer.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(thirst -> {
-                                        thirst.addThirst(1);
-                                        pPlayer.sendSystemMessage(Component.literal("Current Thirst: " + thirst.getThirst()));
-                                    });
-                                    return InteractionResultHolder.pass(pPlayer.getItemInHand(pUsedHand));
-                                }
-                                return  InteractionResultHolder.fail(pPlayer.getItemInHand(pUsedHand));
-                            }
-                            return  InteractionResultHolder.fail(pPlayer.getItemInHand(pUsedHand));
-                        }
-                    });
+            ITEMS.register("fresh_water_bottle", FreshWaterBottleItem::new);
     public static final RegistryObject<Item> CHERRY =
             ITEMS.register("cherry",
                     () -> new Item(new Item.Properties()
