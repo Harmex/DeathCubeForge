@@ -26,6 +26,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.MATTER_MANIPULATOR.get());
         simpleBlock(ModBlocks.RESURRECTION_ALTAR.get());
 
+        simpleBlock(ModBlocks.ZANTHINE_ORE.get());
+        simpleBlock(ModBlocks.DEEPSLATE_ZANTHINE_ORE.get());
+
         simpleBlock(ModBlocks.CHERRY_PLANKS.get());
         simpleBlock(ModBlocks.CHERRY_SAPLING.get(), models().cross(ModBlocks.CHERRY_SAPLING.getKey().location().getPath(),
                 blockTexture(ModBlocks.CHERRY_SAPLING.get())));

@@ -9,10 +9,10 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import org.jetbrains.annotations.NotNull;
 
-public class GoldenCarrotCropBlock extends CropBlock {
+public class GoldenCarrotBlock extends CropBlock {
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 7);
 
-    public GoldenCarrotCropBlock(Properties pProperties) {
+    public GoldenCarrotBlock(Properties pProperties) {
         super(pProperties);
     }
 

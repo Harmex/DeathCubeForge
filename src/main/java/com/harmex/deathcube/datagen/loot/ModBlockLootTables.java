@@ -1,7 +1,7 @@
 package com.harmex.deathcube.datagen.loot;
 
 import com.harmex.deathcube.block.ModBlocks;
-import com.harmex.deathcube.block.custom.GoldenCarrotCropBlock;
+import com.harmex.deathcube.block.custom.GoldenCarrotBlock;
 import com.harmex.deathcube.item.ModItems;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
@@ -11,8 +11,6 @@ import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CarrotBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -41,10 +39,10 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.RESURRECTION_ALTAR.get());
 
         LootItemCondition.Builder goldenCarrotsLootCondition =
-                LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.GOLDEN_CARROT_CROP.get())
-                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GoldenCarrotCropBlock.AGE, 7));
-        this.add(ModBlocks.GOLDEN_CARROT_CROP.get(),
-                applyExplosionDecay(ModBlocks.GOLDEN_CARROT_CROP.get(), LootTable.lootTable()
+                LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.GOLDEN_CARROTS.get())
+                        .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GoldenCarrotBlock.AGE, 7));
+        this.add(ModBlocks.GOLDEN_CARROTS.get(),
+                applyExplosionDecay(ModBlocks.GOLDEN_CARROTS.get(), LootTable.lootTable()
                         .withPool(LootPool.lootPool().add(LootItem.lootTableItem(Items.GOLDEN_CARROT)))
                         .withPool(LootPool.lootPool().when(goldenCarrotsLootCondition).add(LootItem.lootTableItem(Items.GOLDEN_CARROT)
                                 .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))));
@@ -73,6 +71,13 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.CHERRY_FENCE_GATE.get());
         this.dropOther(ModBlocks.CHERRY_SIGN.get(), ModItems.CHERRY_SIGN.get());
         this.dropOther(ModBlocks.CHERRY_WALL_SIGN.get(), ModItems.CHERRY_SIGN.get());
+
+        this.add(ModBlocks.ZANTHINE_ORE.get(), block ->
+                createOreDrop(block, ModItems.ZANTHINE.get())
+        );
+        this.add(ModBlocks.DEEPSLATE_ZANTHINE_ORE.get(), block ->
+                createOreDrop(block, ModItems.ZANTHINE.get())
+        );
     }
 
     @Override

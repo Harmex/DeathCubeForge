@@ -26,6 +26,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         blockItem(ModBlocks.ECHO_AMETHYST_BLOCK.get());
         blockItem(ModBlocks.MATTER_MANIPULATOR.get());
         blockItem(ModBlocks.RESURRECTION_ALTAR.get());
+        blockItem(ModBlocks.ZANTHINE_ORE.get());
+        blockItem(ModBlocks.DEEPSLATE_ZANTHINE_ORE.get());
         //endregion
         //region Cherry Furniture
         blockItem(ModBlocks.CHERRY_PLANKS.get());
@@ -48,6 +50,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         //region Misc.
         basicItem(ModItems.ENDER_DRAGON_SCALE.get());
         basicItem(ModItems.WARDEN_HEART.get());
+        basicItem(ModItems.ZANTHINE.get());
         basicItem(ModItems.FRESH_WATER_BOTTLE.get());
         basicItem(ModItems.ECHO_AMETHYST_SHARD.get());
         basicItem(ModItems.ECHO_AMETHYST_INGOT.get());

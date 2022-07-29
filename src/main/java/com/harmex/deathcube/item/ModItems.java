@@ -4,8 +4,14 @@ import com.harmex.deathcube.DeathCube;
 import com.harmex.deathcube.block.ModBlocks;
 import com.harmex.deathcube.entity.ModEntityTypes;
 import com.harmex.deathcube.item.custom.*;
+import com.harmex.deathcube.thirst.PlayerThirstProvider;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -22,7 +28,22 @@ public class ModItems {
             ITEMS.register("fresh_water_bottle",
                     () -> new Item(new Item.Properties()
                             .tab(ModCreativeModeTab.DEATHCUBE_FOODS_TAB)
-                    ));
+                    ) {
+                        @Override
+                        public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
+                            if (!pLevel.isClientSide()) {
+                                if (pUsedHand == InteractionHand.MAIN_HAND) {
+                                    pPlayer.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(thirst -> {
+                                        thirst.addThirst(1);
+                                        pPlayer.sendSystemMessage(Component.literal("Current Thirst: " + thirst.getThirst()));
+                                    });
+                                    return InteractionResultHolder.pass(pPlayer.getItemInHand(pUsedHand));
+                                }
+                                return  InteractionResultHolder.fail(pPlayer.getItemInHand(pUsedHand));
+                            }
+                            return  InteractionResultHolder.fail(pPlayer.getItemInHand(pUsedHand));
+                        }
+                    });
     public static final RegistryObject<Item> CHERRY =
             ITEMS.register("cherry",
                     () -> new Item(new Item.Properties()
@@ -121,6 +142,13 @@ public class ModItems {
                             .tab(ModCreativeModeTab.DEATHCUBE_MISC_TAB)
                             .fireResistant()
                             .rarity(ModRarities.WARDEN)
+                    ));
+    public static final RegistryObject<Item> ZANTHINE =
+            ITEMS.register("zanthine",
+                    () -> new Item(new Item.Properties()
+                            .tab(ModCreativeModeTab.DEATHCUBE_MISC_TAB)
+                            .fireResistant()
+                            .rarity(Rarity.COMMON)
                     ));
     /*public static final RegistryObject<Item> CHERRY_BOAT =
             ITEMS.register("cherry_boat",
