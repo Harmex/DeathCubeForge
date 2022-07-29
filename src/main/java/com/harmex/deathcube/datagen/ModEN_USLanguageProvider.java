@@ -40,6 +40,10 @@ public class ModEN_USLanguageProvider extends LanguageProvider {
         add(ModBlocks.MATTER_MANIPULATOR.get(), "Matter Manipulator");
         add(ModBlocks.RESURRECTION_ALTAR.get(), "Resurrection Altar");
 
+        add(ModBlocks.ZANTHINE_ORE.get(), "Zanthine Ore");
+        add(ModBlocks.DEEPSLATE_ZANTHINE_ORE.get(), "Deepslate Zanthine Ore");
+        add(ModItems.ZANTHINE.get(), "Zanthine");
+
         add(ModItems.FRESH_WATER_BOTTLE.get(), "Fresh Water Bottle");
         add(ModItems.CHERRY.get(), "Cherry");
         add(ModItems.TIME_GEM_APPLE.get(), "Time Gem Apple");

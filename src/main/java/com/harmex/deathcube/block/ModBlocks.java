@@ -7,12 +7,17 @@ import com.harmex.deathcube.item.ModCreativeModeTab;
 import com.harmex.deathcube.item.ModItems;
 import com.harmex.deathcube.item.ModRarities;
 import com.harmex.deathcube.world.feature.tree.CherryTreeGrower;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -35,8 +40,8 @@ public class ModBlocks {
             ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.WARDEN);
     //endregion
     //region Crop
-    public static final RegistryObject<Block> GOLDEN_CARROT_CROP = registerBlockWithoutBlockItem("golden_carrot_crop",
-            () -> new GoldenCarrotCropBlock(BlockBehaviour.Properties.of(Material.PLANT)
+    public static final RegistryObject<Block> GOLDEN_CARROTS = registerBlockWithoutBlockItem("golden_carrots",
+            () -> new GoldenCarrotBlock(BlockBehaviour.Properties.of(Material.PLANT)
                     .noCollission()
                     .randomTicks()
                     .instabreak()
@@ -56,12 +61,39 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
             ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, Rarity.COMMON);
     //endregion
-
+    //region Ores
+    public static final RegistryObject<Block> ZANTHINE_ORE = registerBlock("zanthine_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(3F, 3F)
+                    .requiresCorrectToolForDrops(),
+                    UniformInt.of(5, 7)
+            ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, Rarity.COMMON);
+    public static final RegistryObject<Block> DEEPSLATE_ZANTHINE_ORE = registerBlock("deepslate_zanthine_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(ZANTHINE_ORE.get())
+                    .sound(SoundType.DEEPSLATE),
+                    UniformInt.of(5, 7)
+            ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, Rarity.COMMON);
+    //endregion
     //region Cherry Tree
     public static final RegistryObject<Block> CHERRY_PLANKS = registerBlock("cherry_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
                     .color(MaterialColor.COLOR_PINK)
-            ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.CHERRY);
+            ) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+            }, ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.CHERRY);
 
     public static final RegistryObject<Block> CHERRY_SAPLING = registerBlock("cherry_sapling",
             () -> new SaplingBlock(new CherryTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)
@@ -94,23 +126,83 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHERRY_LEAVES = registerBlock("cherry_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)
                     .color(MaterialColor.COLOR_PINK)
-            ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.CHERRY);
+            ) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+            }, ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.CHERRY);
     //endregion
     //region Cherry Furniture
     public static final RegistryObject<Block> CHERRY_SLAB = registerBlock("cherry_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)
                     .color(CHERRY_PLANKS.get().defaultMaterialColor())
-            ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.CHERRY);
+            ) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+            }, ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.CHERRY);
 
     public static final RegistryObject<Block> CHERRY_FENCE = registerBlock("cherry_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)
                     .color(CHERRY_PLANKS.get().defaultMaterialColor())
-            ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.CHERRY);
+            ) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+            }, ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.CHERRY);
 
     public static final RegistryObject<Block> CHERRY_STAIRS = registerBlock("cherry_stairs",
             () -> new StairBlock(() -> ModBlocks.CHERRY_PLANKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.copy(CHERRY_PLANKS.get())
-            ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.CHERRY);
+            ) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+            }, ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.CHERRY);
 
     public static final RegistryObject<Block> CHERRY_BUTTON = registerBlock("cherry_button",
             () -> new WoodButtonBlock(BlockBehaviour.Properties.copy(Blocks.OAK_BUTTON)
@@ -135,7 +227,22 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHERRY_FENCE_GATE = registerBlock("cherry_fence_gate",
             () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE)
                     .color(CHERRY_PLANKS.get().defaultMaterialColor())
-            ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.CHERRY);
+            ) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+            }, ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.CHERRY);
 
     public static final RegistryObject<Block> CHERRY_SIGN = registerBlockWithoutBlockItem("cherry_sign",
             () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN)

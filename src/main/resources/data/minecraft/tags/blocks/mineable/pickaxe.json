@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "deathcube:matter_manipulator"
+    "deathcube:matter_manipulator",
+    "#deathcube:zanthine_ores"
   ]
 }
