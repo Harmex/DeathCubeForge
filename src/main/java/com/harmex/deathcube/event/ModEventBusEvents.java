@@ -18,7 +18,7 @@ public class ModEventBusEvents {
 
     // TODO : registration des loot modifiers
     @SubscribeEvent
-    public static void registerEvent(final RegisterEvent event) {
+    public static void registerEvent(RegisterEvent event) {
         /*event.register(ForgeRegistries.Keys.LOOT_MODIFIER_SERIALIZERS, helper -> {
             helper.register(new ResourceLocation(DeathCube.MODID, "ender_dragon_scale_from_ender_dragon"),
                     new EnderDragonScaleFromEnderDragonAdditionModifier.Serializer());

@@ -4,6 +4,7 @@ import com.harmex.deathcube.DeathCube;
 import com.harmex.deathcube.block.ModBlocks;
 import com.harmex.deathcube.block.entity.ModBlockEntities;
 import com.harmex.deathcube.block.entity.ModWoodTypes;
+import com.harmex.deathcube.client.ThirstHudOverlay;
 import com.harmex.deathcube.entity.ModEntityTypes;
 import com.harmex.deathcube.entity.galterius.GalteriusModel;
 import com.harmex.deathcube.entity.galterius.GalteriusRenderer;
@@ -18,6 +19,7 @@ import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -38,7 +40,7 @@ public class ModEventClientBusEvents {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_CHERRY_SAPLING.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.CHERRY_TRAPDOOR.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GOLDEN_CARROT_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.GOLDEN_CARROTS.get(), RenderType.cutout());
     }
 
     @SubscribeEvent
@@ -49,5 +51,10 @@ public class ModEventClientBusEvents {
     @SubscribeEvent
     public static void onRegister(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntityTypes.GALTERIUS_ENTITY.get(), GalteriusRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerGuiOverlay(RegisterGuiOverlaysEvent event) {
+        event.registerAboveAll("thirst", ThirstHudOverlay.HUD_THIRST);
     }
 }

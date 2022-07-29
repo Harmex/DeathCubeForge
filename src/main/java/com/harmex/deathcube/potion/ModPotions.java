@@ -11,11 +11,6 @@ public class ModPotions {
     public static final DeferredRegister<Potion> POTIONS =
             DeferredRegister.create(ForgeRegistries.POTIONS, DeathCube.MODID);
 
-    //public static final RegistryObject<Potion> FRESH_WATER =
-    //        POTIONS.register("fresh_water",
-    //                () -> new Potion())
-
-
     public static void register(IEventBus eventBus) {
         POTIONS.register(eventBus);
     }

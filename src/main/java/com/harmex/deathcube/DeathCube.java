@@ -7,10 +7,13 @@ import com.harmex.deathcube.config.DeathCubeClientConfigs;
 import com.harmex.deathcube.config.DeathCubeCommonConfigs;
 import com.harmex.deathcube.entity.ModEntityTypes;
 import com.harmex.deathcube.item.ModItems;
+import com.harmex.deathcube.networking.ModMessages;
 import com.harmex.deathcube.painting.ModPaintings;
 import com.harmex.deathcube.potion.ModPotions;
 import com.harmex.deathcube.recipe.ModRecipes;
 import com.harmex.deathcube.screen.ModMenuTypes;
+import com.harmex.deathcube.world.feature.ModConfiguredFeatures;
+import com.harmex.deathcube.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.world.level.block.Blocks;
@@ -43,6 +46,8 @@ public class DeathCube {
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
+        ModConfiguredFeatures.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
 
 
         modEventBus.addListener(this::commonSetup);
@@ -59,6 +64,8 @@ public class DeathCube {
 
             Sheets.addWoodType(ModWoodTypes.CHERRY);
         });
+
+        ModMessages.register();
     }
 
 }
