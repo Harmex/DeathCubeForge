@@ -63,9 +63,10 @@ public class DeathCube {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CHERRY_SAPLING.getId(), ModBlocks.POTTED_CHERRY_SAPLING);
 
             Sheets.addWoodType(ModWoodTypes.CHERRY);
+
+            ModMessages.register();
         });
 
-        ModMessages.register();
     }
 
 }
