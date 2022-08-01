@@ -1,0 +1,14 @@
+{
+  "type": "deathcube:upgrading",
+  "base": {
+    "item": "minecraft:wooden_sword"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:stick"
+    }
+  ],
+  "result": {
+    "item": "minecraft:stone"
+  }
+}

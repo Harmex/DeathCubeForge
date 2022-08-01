@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "deathcube:bone_helmet",
+    "deathcube:bone_chestplate",
+    "deathcube:bone_leggings",
+    "deathcube:bone_boots",
+    "deathcube:bone_sword",
+    "deathcube:bone_pickaxe",
+    "deathcube:bone_axe",
+    "deathcube:bone_shovel",
+    "deathcube:bone_hoe"
+  ]
+}

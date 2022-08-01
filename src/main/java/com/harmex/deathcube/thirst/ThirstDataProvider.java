@@ -11,15 +11,15 @@ import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class PlayerThirstProvider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
-    public static Capability<PlayerThirst> PLAYER_THIRST = CapabilityManager.get(new CapabilityToken<>() { });
+public class ThirstDataProvider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
+    public static Capability<ThirstData> PLAYER_THIRST = CapabilityManager.get(new CapabilityToken<>() { });
 
-    private PlayerThirst thirst = null;
-    private final LazyOptional<PlayerThirst> optional = LazyOptional.of(this::createPlayerThirst);
+    private ThirstData thirst = null;
+    private final LazyOptional<ThirstData> optional = LazyOptional.of(this::createPlayerThirst);
 
-    private PlayerThirst createPlayerThirst() {
+    private ThirstData createPlayerThirst() {
         if (this.thirst == null) {
-            this.thirst = new PlayerThirst();
+            this.thirst = new ThirstData();
         }
 
         return this.thirst;

@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "deathcube:obsidian_helmet",
+    "deathcube:obsidian_chestplate",
+    "deathcube:obsidian_leggings",
+    "deathcube:obsidian_boots",
+    "deathcube:obsidian_sword",
+    "deathcube:obsidian_pickaxe",
+    "deathcube:obsidian_axe",
+    "deathcube:obsidian_shovel",
+    "deathcube:obsidian_hoe"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "deathcube:copper_helmet",
+    "deathcube:copper_chestplate",
+    "deathcube:copper_leggings",
+    "deathcube:copper_boots",
+    "deathcube:copper_sword",
+    "deathcube:copper_pickaxe",
+    "deathcube:copper_axe",
+    "deathcube:copper_shovel",
+    "deathcube:copper_hoe"
+  ]
+}

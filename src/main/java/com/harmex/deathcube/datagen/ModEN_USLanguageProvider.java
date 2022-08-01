@@ -19,6 +19,12 @@ public class ModEN_USLanguageProvider extends LanguageProvider {
         add("itemGroup." + DeathCube.MODID + ".armors", "DeathCube | Armors");
         add("itemGroup." + DeathCube.MODID + ".foods", "DeathCube | Foods");
 
+        add("container." + DeathCube.MODID + ".upgrading_station", "Upgrading Station");
+        add("container." + DeathCube.MODID + ".matter_manipulator", "Matter Manipulator");
+        add("container." + DeathCube.MODID + ".resurrection_altar", "Resurrection Altar");
+
+        add(ModItems.GALTERIUS_SPAWN_EGG.get(), "Galterius Spawn Egg");
+
         add(ModBlocks.CHERRY_PLANKS.get(), "Cherry Planks");
         add(ModBlocks.CHERRY_SAPLING.get(), "Cherry Sapling");
         add(ModBlocks.CHERRY_LOG.get(), "Cherry Log");
@@ -37,6 +43,7 @@ public class ModEN_USLanguageProvider extends LanguageProvider {
         add(ModBlocks.CHERRY_SIGN.get(), "Cherry Sign");
 
         add(ModBlocks.ECHO_AMETHYST_BLOCK.get(), "Echo-Amethyst Block");
+        add(ModBlocks.UPGRADING_STATION.get(), "Upgrade Station");
         add(ModBlocks.MATTER_MANIPULATOR.get(), "Matter Manipulator");
         add(ModBlocks.RESURRECTION_ALTAR.get(), "Resurrection Altar");
 
@@ -52,7 +59,7 @@ public class ModEN_USLanguageProvider extends LanguageProvider {
         add(ModItems.BEDROCK_APPLE.get(), "Bedrock Apple");
 
         add(ModItems.TIME_GEM.get(), "Time Gem");
-        add(ModItems.ECHO_AMETHYST_SHARD.get(), "Echo-Amethyst Chard");
+        add(ModItems.ECHO_AMETHYST_SHARD.get(), "Echo-Amethyst Shard");
         add(ModItems.ECHO_AMETHYST_INGOT.get(), "Echo-Amethyst Ingot");
         add(ModItems.WARDEN_HEART.get(), "Warden Heart");
         add(ModItems.ENDER_DRAGON_SCALE.get(), "Ender Dragon Scale");

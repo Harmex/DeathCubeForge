@@ -31,10 +31,12 @@ public class ModBlockLootTables extends BlockLoot {
     private static final LootItemCondition.Builder HAS_NO_SHEARS_OR_SILK_TOUCH = HAS_SHEARS_OR_SILK_TOUCH.invert();
     private static final float[] NORMAL_LEAVES_SAPLING_CHANCES = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
     private static final float[] NORMAL_LEAVES_FRUIT_CHANCES = new float[]{0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F};
+    private static final float[] CHERRY_LEAVES_FRUIT_CHANCES = new float[]{0.5F, 0.55555557F, 0.625F, 0.8333334F, 1.0F};
 
     @Override
     protected void addTables() {
         this.dropSelf(ModBlocks.ECHO_AMETHYST_BLOCK.get());
+        this.dropSelf(ModBlocks.UPGRADING_STATION.get());
         this.dropSelf(ModBlocks.MATTER_MANIPULATOR.get());
         this.dropSelf(ModBlocks.RESURRECTION_ALTAR.get());
 
@@ -50,13 +52,13 @@ public class ModBlockLootTables extends BlockLoot {
         this.dropSelf(ModBlocks.CHERRY_PLANKS.get());
         this.dropSelf(ModBlocks.CHERRY_SAPLING.get());
         this.dropPottedContents(ModBlocks.POTTED_CHERRY_SAPLING.get());
-        this.add(ModBlocks.CHERRY_LEAVES.get(), (block) ->
+        this.add(ModBlocks.CHERRY_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.CHERRY_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES)
                         .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
                                 .when(HAS_NO_SHEARS_OR_SILK_TOUCH)
                                 .add(applyExplosionCondition(block, LootItem.lootTableItem(ModItems.CHERRY.get()))
                                         .when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE,
-                                                NORMAL_LEAVES_FRUIT_CHANCES)))));
+                                                CHERRY_LEAVES_FRUIT_CHANCES)))));
         this.dropSelf(ModBlocks.CHERRY_LOG.get());
         this.dropSelf(ModBlocks.STRIPPED_CHERRY_LOG.get());
         this.dropSelf(ModBlocks.STRIPPED_CHERRY_WOOD.get());
@@ -82,6 +84,6 @@ public class ModBlockLootTables extends BlockLoot {
 
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks() {
-        return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+        return ModBlocks.BLOCKS.getEntries().stream().flatMap(RegistryObject::stream)::iterator;
     }
 }

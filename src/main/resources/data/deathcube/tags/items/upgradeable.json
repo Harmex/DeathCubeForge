@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "#deathcube:wooden_sets",
+    "#deathcube:stone_set",
+    "#deathcube:bone_set",
+    "#deathcube:copper_set",
+    "#deathcube:golden_set",
+    "#deathcube:iron_set",
+    "#deathcube:diamond_set",
+    "#deathcube:netherite_set",
+    "#deathcube:emerald_set",
+    "#deathcube:obsidian_set"
+  ]
+}

@@ -49,12 +49,16 @@ public class ModBlocks {
             ));
     //endregion
     //region Entity
+    public static final RegistryObject<Block> UPGRADING_STATION = registerBlock("upgrading_station",
+            () -> new UpgradingStationBlock(BlockBehaviour.Properties.of(Material.METAL)
+                    .strength(9f)
+                    .requiresCorrectToolForDrops()
+            ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.WARDEN);
     public static final RegistryObject<Block> MATTER_MANIPULATOR = registerBlock("matter_manipulator",
             () -> new MatterManipulatorBlock(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(9f)
                     .requiresCorrectToolForDrops()
             ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.WARDEN);
-
     public static final RegistryObject<Block> RESURRECTION_ALTAR = registerBlock("resurrection_altar",
             () -> new ResurrectionAltarBlock(BlockBehaviour.Properties.of(Material.METAL)
                     .strength(9f)
@@ -104,22 +108,22 @@ public class ModBlocks {
             ));
 
     public static final RegistryObject<Block> CHERRY_LOG = registerBlock("cherry_log",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
+            () -> new ModLogBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)
                     .color(MaterialColor.COLOR_PINK)
             ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.CHERRY);
 
     public static final RegistryObject<Block> STRIPPED_CHERRY_LOG = registerBlock("stripped_cherry_log",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)
+            () -> new ModLogBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)
                     .color(MaterialColor.COLOR_PINK)
             ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.CHERRY);
 
     public static final RegistryObject<Block> STRIPPED_CHERRY_WOOD = registerBlock("stripped_cherry_wood",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
+            () -> new ModLogBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)
                     .color(MaterialColor.COLOR_PINK)
             ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.CHERRY);
 
     public static final RegistryObject<Block> CHERRY_WOOD = registerBlock("cherry_wood",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
+            () -> new ModLogBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)
                     .color(MaterialColor.COLOR_PINK)
             ), ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB, ModRarities.CHERRY);
 

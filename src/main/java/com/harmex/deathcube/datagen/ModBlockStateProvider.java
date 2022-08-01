@@ -23,6 +23,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         simpleBlock(ModBlocks.ECHO_AMETHYST_BLOCK.get());
+        simpleBlock(ModBlocks.UPGRADING_STATION.get());
         simpleBlock(ModBlocks.MATTER_MANIPULATOR.get());
         simpleBlock(ModBlocks.RESURRECTION_ALTAR.get());
 

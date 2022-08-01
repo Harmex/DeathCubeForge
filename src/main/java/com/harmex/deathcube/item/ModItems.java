@@ -4,14 +4,8 @@ import com.harmex.deathcube.DeathCube;
 import com.harmex.deathcube.block.ModBlocks;
 import com.harmex.deathcube.entity.ModEntityTypes;
 import com.harmex.deathcube.item.custom.*;
-import com.harmex.deathcube.thirst.PlayerThirstProvider;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -428,7 +422,7 @@ public class ModItems {
     //region Spawn Eggs
     public static final RegistryObject<Item> GALTERIUS_SPAWN_EGG =
             ITEMS.register("galterius_spawn_egg",
-                    () -> new ForgeSpawnEggItem(ModEntityTypes.GALTERIUS_ENTITY,
+                    () -> new ForgeSpawnEggItem(ModEntityTypes.GALTERIUS,
                             0xffffff, 0x000000,
                             new Item.Properties()
                                     .tab(ModCreativeModeTab.DEATHCUBE_MISC_TAB)

@@ -152,7 +152,6 @@ public class MatterManipulatorBlockEntity extends BlockEntity implements MenuPro
         if (match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem())) {
             pBlockEntity.manipulationTimeTotal = match.get().getManipulationTime();
-
         }
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)

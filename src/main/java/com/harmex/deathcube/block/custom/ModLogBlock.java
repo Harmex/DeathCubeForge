@@ -10,9 +10,11 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ToolAction;
 
-
-public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
-    public ModFlammableRotatedPillarBlock(Properties properties) {
+/**
+ * Logs :D
+ */
+public class ModLogBlock extends RotatedPillarBlock {
+    public ModLogBlock(Properties properties) {
         super(properties);
     }
 

@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "deathcube:emerald_helmet",
+    "deathcube:emerald_chestplate",
+    "deathcube:emerald_leggings",
+    "deathcube:emerald_boots",
+    "deathcube:emerald_sword",
+    "deathcube:emerald_pickaxe",
+    "deathcube:emerald_axe",
+    "deathcube:emerald_shovel",
+    "deathcube:emerald_hoe"
+  ]
+}

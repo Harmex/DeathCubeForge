@@ -6,6 +6,7 @@ import com.harmex.deathcube.entity.galterius.GalteriusEntity;
 //import com.harmex.deathcube.event.loot.EnderDragonScaleFromEnderDragonAdditionModifier;
 //import com.harmex.deathcube.event.loot.WardenHeartFromWardenAdditionModifier;
 import com.harmex.deathcube.recipe.ShapedMatterManipulationRecipe;
+import com.harmex.deathcube.recipe.UpgradingStationRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -29,11 +30,13 @@ public class ModEventBusEvents {
         event.register(ForgeRegistries.Keys.RECIPE_TYPES, helper -> {
             helper.register(new ResourceLocation(DeathCube.MODID, ShapedMatterManipulationRecipe.Type.ID),
                     ShapedMatterManipulationRecipe.Type.INSTANCE);
+            helper.register(new ResourceLocation(DeathCube.MODID, UpgradingStationRecipe.Type.ID),
+                    UpgradingStationRecipe.Type.INSTANCE);
         });
     }
 
     @SubscribeEvent
     public static void onCreateAttribute(EntityAttributeCreationEvent event) {
-        event.put(ModEntityTypes.GALTERIUS_ENTITY.get(), GalteriusEntity.createAttributes().build());
+        event.put(ModEntityTypes.GALTERIUS.get(), GalteriusEntity.createAttributes().build());
     }
 }

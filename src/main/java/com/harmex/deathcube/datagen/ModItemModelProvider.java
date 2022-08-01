@@ -24,6 +24,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         //region Blocks
         blockItem(ModBlocks.ECHO_AMETHYST_BLOCK.get());
+        blockItem(ModBlocks.UPGRADING_STATION.get());
         blockItem(ModBlocks.MATTER_MANIPULATOR.get());
         blockItem(ModBlocks.RESURRECTION_ALTAR.get());
         blockItem(ModBlocks.ZANTHINE_ORE.get());

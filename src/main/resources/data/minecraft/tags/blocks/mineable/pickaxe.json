@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "deathcube:upgrading_station",
     "deathcube:matter_manipulator",
     "#deathcube:zanthine_ores"
   ]

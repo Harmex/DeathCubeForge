@@ -4,7 +4,8 @@ import com.harmex.deathcube.DeathCube;
 import com.harmex.deathcube.block.ModBlocks;
 import com.harmex.deathcube.block.entity.ModBlockEntities;
 import com.harmex.deathcube.block.entity.ModWoodTypes;
-import com.harmex.deathcube.client.ThirstHudOverlay;
+import com.harmex.deathcube.screen.UpgradingStationScreen;
+import com.harmex.deathcube.thirst.ThirstHudOverlay;
 import com.harmex.deathcube.entity.ModEntityTypes;
 import com.harmex.deathcube.entity.galterius.GalteriusModel;
 import com.harmex.deathcube.entity.galterius.GalteriusRenderer;
@@ -25,9 +26,10 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(modid = DeathCube.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class ModEventClientBusEvents {
+public class ClientModBusEvents {
     @SubscribeEvent
     public static void clientSetup(final FMLClientSetupEvent event) {
+        MenuScreens.register(ModMenuTypes.UPGRADING_STATION_MENU.get(), UpgradingStationScreen::new);
         MenuScreens.register(ModMenuTypes.MATTER_MANIPULATOR_MENU.get(), MatterManipulatorScreen::new);
         MenuScreens.register(ModMenuTypes.RESURRECTION_ALTAR_MENU.get(), ResurrectionAltarScreen::new);
 
@@ -50,11 +52,13 @@ public class ModEventClientBusEvents {
 
     @SubscribeEvent
     public static void onRegister(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(ModEntityTypes.GALTERIUS_ENTITY.get(), GalteriusRenderer::new);
+        event.registerEntityRenderer(ModEntityTypes.GALTERIUS.get(), GalteriusRenderer::new);
     }
 
     @SubscribeEvent
     public static void registerGuiOverlay(RegisterGuiOverlaysEvent event) {
         event.registerAboveAll("thirst", ThirstHudOverlay.HUD_THIRST);
     }
+
 }
+

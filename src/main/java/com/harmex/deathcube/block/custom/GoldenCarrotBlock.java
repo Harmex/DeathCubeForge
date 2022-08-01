@@ -9,7 +9,11 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Unused.
+ */
 public class GoldenCarrotBlock extends CropBlock {
+    // Crop state property
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 7);
 
     public GoldenCarrotBlock(Properties pProperties) {

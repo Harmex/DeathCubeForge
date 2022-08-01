@@ -15,6 +15,9 @@ public class ModMenuTypes {
             DeferredRegister.create(ForgeRegistries.MENU_TYPES, DeathCube.MODID);
 
 
+    public static final RegistryObject<MenuType<UpgradingStationMenu>> UPGRADING_STATION_MENU =
+            registerMenuType(UpgradingStationMenu::new, "upgrading_menu_menu");
+
     public static final RegistryObject<MenuType<MatterManipulatorMenu>> MATTER_MANIPULATOR_MENU =
             registerMenuType(MatterManipulatorMenu::new, "matter_manipulator_menu");
 

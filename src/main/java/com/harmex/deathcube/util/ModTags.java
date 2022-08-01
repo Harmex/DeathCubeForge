@@ -30,6 +30,9 @@ public class ModTags {
         public static final TagKey<Item> DIAMOND_SET =
                 tag("diamond_set");
 
+        public static final TagKey<Item> UPGRADEABLE =
+                tag("upgradeable");
+
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(DeathCube.MODID, name));
         }
