@@ -25,7 +25,7 @@ public class ModItems {
                     () -> new Item(new Item.Properties()
                             .tab(ModCreativeModeTab.DEATHCUBE_FOODS_TAB)
                             .food(ModFoods.CHERRY)
-                            .rarity(ModRarities.CHERRY)
+                            .rarity(ModRarities.COMMON)
                     ));
     public static final RegistryObject<Item> TIME_GEM_APPLE =
             ITEMS.register("time_gem_apple",
@@ -79,7 +79,7 @@ public class ModItems {
                     () -> new SignItem(new Item.Properties()
                             .tab(ModCreativeModeTab.DEATHCUBE_BLOCKS_TAB)
                             .stacksTo(16)
-                            .rarity(ModRarities.CHERRY),
+                            .rarity(ModRarities.COMMON),
                             ModBlocks.CHERRY_SIGN.get(),
                             ModBlocks.CHERRY_WALL_SIGN.get()
                     ));
@@ -96,14 +96,14 @@ public class ModItems {
                     () -> new Item(new Item.Properties()
                             .tab(ModCreativeModeTab.DEATHCUBE_MISC_TAB)
                             .fireResistant()
-                            .rarity(ModRarities.WARDEN)
+                            .rarity(ModRarities.EPIC)
                     ));
     public static final RegistryObject<Item> ECHO_AMETHYST_INGOT =
             ITEMS.register("echo_amethyst_ingot",
                     () -> new Item(new Item.Properties()
                             .tab(ModCreativeModeTab.DEATHCUBE_MISC_TAB)
                             .fireResistant()
-                            .rarity(ModRarities.WARDEN)
+                            .rarity(ModRarities.EPIC)
                     ));
     public static final RegistryObject<Item> ENDER_DRAGON_SCALE =
             ITEMS.register("ender_dragon_scale",
@@ -117,14 +117,14 @@ public class ModItems {
                     () -> new Item(new Item.Properties()
                             .tab(ModCreativeModeTab.DEATHCUBE_MISC_TAB)
                             .fireResistant()
-                            .rarity(ModRarities.WARDEN)
+                            .rarity(ModRarities.EPIC)
                     ));
     public static final RegistryObject<Item> ZANTHINE =
             ITEMS.register("zanthine",
                     () -> new Item(new Item.Properties()
                             .tab(ModCreativeModeTab.DEATHCUBE_MISC_TAB)
                             .fireResistant()
-                            .rarity(Rarity.COMMON)
+                            .rarity(Rarity.UNCOMMON)
                     ));
     /*public static final RegistryObject<Item> CHERRY_BOAT =
             ITEMS.register("cherry_boat",
@@ -270,80 +270,80 @@ public class ModItems {
     public static final RegistryObject<Item> BONE_HELMET = ITEMS.register("bone_helmet",
             () -> new ArmorItem(ModArmorMaterials.BONE, EquipmentSlot.HEAD, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_ARMORS_TAB)
-                    .rarity(ModRarities.BONE)));
+                    .rarity(ModRarities.COMMON)));
     public static final RegistryObject<Item> BONE_CHESTPLATE = ITEMS.register("bone_chestplate",
             () -> new ArmorItem(ModArmorMaterials.BONE, EquipmentSlot.CHEST, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_ARMORS_TAB)
-                    .rarity(ModRarities.BONE)));
+                    .rarity(ModRarities.COMMON)));
     public static final RegistryObject<Item> BONE_LEGGINGS = ITEMS.register("bone_leggings",
             () -> new ArmorItem(ModArmorMaterials.BONE, EquipmentSlot.LEGS, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_ARMORS_TAB)
-                    .rarity(ModRarities.BONE)));
+                    .rarity(ModRarities.COMMON)));
     public static final RegistryObject<Item> BONE_BOOTS = ITEMS.register("bone_boots",
             () -> new ArmorItem(ModArmorMaterials.BONE, EquipmentSlot.FEET, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_ARMORS_TAB)
-                    .rarity(ModRarities.BONE)));
+                    .rarity(ModRarities.COMMON)));
     //Bone Tools
     public static final RegistryObject<Item> BONE_SWORD = ITEMS.register("bone_sword",
             () -> new SwordItem(ModTiers.BONE, 3, -2.4f, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                    .rarity(ModRarities.BONE)));
+                    .rarity(ModRarities.COMMON)));
     public static final RegistryObject<Item> BONE_PICKAXE = ITEMS.register("bone_pickaxe",
             () -> new PickaxeItem(ModTiers.BONE, 1, -2.8f, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                    .rarity(ModRarities.BONE)));
+                    .rarity(ModRarities.COMMON)));
     public static final RegistryObject<Item> BONE_AXE = ITEMS.register("bone_axe",
             () -> new AxeItem(ModTiers.BONE, 6.5f, -3.2f, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                    .rarity(ModRarities.BONE)));
+                    .rarity(ModRarities.COMMON)));
     public static final RegistryObject<Item> BONE_SHOVEL = ITEMS.register("bone_shovel",
             () -> new ShovelItem(ModTiers.BONE, 1.5f, -3.0f, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                    .rarity(ModRarities.BONE)));
+                    .rarity(ModRarities.COMMON)));
     public static final RegistryObject<Item> BONE_HOE = ITEMS.register("bone_hoe",
             () -> new HoeItem(ModTiers.BONE, -1, -2.5f, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                    .rarity(ModRarities.BONE)));
+                    .rarity(ModRarities.COMMON)));
     //endregion
     //region Copper
     //Copper Armor
     public static final RegistryObject<Item> COPPER_HELMET = ITEMS.register("copper_helmet",
             () -> new ArmorItem(ModArmorMaterials.COPPER, EquipmentSlot.HEAD, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_ARMORS_TAB)
-                    .rarity(ModRarities.COPPER)));
+                    .rarity(ModRarities.COMMON)));
     public static final RegistryObject<Item> COPPER_CHESTPLATE = ITEMS.register("copper_chestplate",
             () -> new ArmorItem(ModArmorMaterials.COPPER, EquipmentSlot.CHEST, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_ARMORS_TAB)
-                    .rarity(ModRarities.COPPER)));
+                    .rarity(ModRarities.COMMON)));
     public static final RegistryObject<Item> COPPER_LEGGINGS = ITEMS.register("copper_leggings",
             () -> new ArmorItem(ModArmorMaterials.COPPER, EquipmentSlot.LEGS, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_ARMORS_TAB)
-                    .rarity(ModRarities.COPPER)));
+                    .rarity(ModRarities.COMMON)));
     public static final RegistryObject<Item> COPPER_BOOTS = ITEMS.register("copper_boots",
             () -> new ArmorItem(ModArmorMaterials.COPPER, EquipmentSlot.FEET, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_ARMORS_TAB)
-                    .rarity(ModRarities.COPPER)));
+                    .rarity(ModRarities.COMMON)));
     //Copper Tools
     public static final RegistryObject<Item> COPPER_SWORD = ITEMS.register("copper_sword",
                     () -> new SwordItem(ModTiers.COPPER, 3, -2.4f, new Item.Properties()
                             .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                            .rarity(ModRarities.COPPER)));
+                            .rarity(ModRarities.COMMON)));
     public static final RegistryObject<Item> COPPER_PICKAXE = ITEMS.register("copper_pickaxe",
                     () -> new PickaxeItem(ModTiers.COPPER, 1, -2.8f, new Item.Properties()
                             .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                            .rarity(ModRarities.COPPER)));
+                            .rarity(ModRarities.COMMON)));
     public static final RegistryObject<Item> COPPER_AXE = ITEMS.register("copper_axe",
                     () -> new AxeItem(ModTiers.COPPER, 6, -3.1f, new Item.Properties()
                             .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                            .rarity(ModRarities.COPPER)));
+                            .rarity(ModRarities.COMMON)));
     public static final RegistryObject<Item> COPPER_SHOVEL = ITEMS.register("copper_shovel",
                     () -> new ShovelItem(ModTiers.COPPER, 1.5f, -3.0f, new Item.Properties()
                             .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                            .rarity(ModRarities.COPPER)));
+                            .rarity(ModRarities.COMMON)));
     public static final RegistryObject<Item> COPPER_HOE = ITEMS.register("copper_hoe",
                     () -> new HoeItem(ModTiers.COPPER, -2, -1.0f, new Item.Properties()
                             .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                            .rarity(ModRarities.COPPER)));
+                            .rarity(ModRarities.COMMON)));
     //endregion
     //region Emerald
     //Emerald Armor
@@ -359,23 +359,23 @@ public class ModItems {
     public static final RegistryObject<Item> EMERALD_SWORD = ITEMS.register("emerald_sword",
             () -> new SwordItem(ModTiers.EMERALD, 3, -2.4f, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                    .rarity(ModRarities.EMERALD)));
+                    .rarity(ModRarities.UNCOMMON)));
     public static final RegistryObject<Item> EMERALD_PICKAXE = ITEMS.register("emerald_pickaxe",
             () -> new PickaxeItem(ModTiers.EMERALD, 1, -2.8f, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                    .rarity(ModRarities.EMERALD)));
+                    .rarity(ModRarities.UNCOMMON)));
     public static final RegistryObject<Item> EMERALD_AXE = ITEMS.register("emerald_axe",
             () -> new AxeItem(ModTiers.EMERALD, 5, -3.0f, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                    .rarity(ModRarities.EMERALD)));
+                    .rarity(ModRarities.UNCOMMON)));
     public static final RegistryObject<Item> EMERALD_SHOVEL = ITEMS.register("emerald_shovel",
             () -> new ShovelItem(ModTiers.EMERALD, 1.5f, -3.0f, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                    .rarity(ModRarities.EMERALD)));
+                    .rarity(ModRarities.UNCOMMON)));
     public static final RegistryObject<Item> EMERALD_HOE = ITEMS.register("emerald_hoe",
             () -> new HoeItem(ModTiers.EMERALD, -3, 0.0f, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                    .rarity(ModRarities.EMERALD)));
+                    .rarity(ModRarities.UNCOMMON)));
     //endregion
     //region Obsidian
     //Obsidian Armor
@@ -391,23 +391,23 @@ public class ModItems {
     public static final RegistryObject<Item> OBSIDIAN_SWORD = ITEMS.register("obsidian_sword",
             () -> new SwordItem(ModTiers.OBSIDIAN, 3, -2.4f, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                    .rarity(ModRarities.OBSIDIAN)));
+                    .rarity(ModRarities.RARE)));
     public static final RegistryObject<Item> OBSIDIAN_PICKAXE = ITEMS.register("obsidian_pickaxe",
             () -> new PickaxeItem(ModTiers.OBSIDIAN, 1, -2.8f, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                    .rarity(ModRarities.OBSIDIAN)));
+                    .rarity(ModRarities.RARE)));
     public static final RegistryObject<Item> OBSIDIAN_AXE = ITEMS.register("obsidian_axe",
             () -> new AxeItem(ModTiers.OBSIDIAN, 5, -3.0f, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                    .rarity(ModRarities.OBSIDIAN)));
+                    .rarity(ModRarities.RARE)));
     public static final RegistryObject<Item> OBSIDIAN_SHOVEL = ITEMS.register("obsidian_shovel",
             () -> new ShovelItem(ModTiers.OBSIDIAN, 1.5f, -3.0f, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                    .rarity(ModRarities.OBSIDIAN)));
+                    .rarity(ModRarities.RARE)));
     public static final RegistryObject<Item> OBSIDIAN_HOE = ITEMS.register("obsidian_hoe",
             () -> new HoeItem(ModTiers.OBSIDIAN, -3, 0.0f, new Item.Properties()
                     .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
-                    .rarity(ModRarities.OBSIDIAN)));
+                    .rarity(ModRarities.RARE)));
     //endregion
     //region Wands
     public static final RegistryObject<Item> TIME_WAND =

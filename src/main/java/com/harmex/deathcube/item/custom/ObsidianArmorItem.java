@@ -29,7 +29,7 @@ public class ObsidianArmorItem extends ArmorItem {
     public ObsidianArmorItem(EquipmentSlot pSlot) {
         super(ModArmorMaterials.OBSIDIAN, pSlot, new Properties()
                 .tab(ModCreativeModeTab.DEATHCUBE_ARMORS_TAB)
-                .rarity(ModRarities.OBSIDIAN)
+                .rarity(ModRarities.EPIC)
         );
     }
 

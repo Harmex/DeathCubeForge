@@ -21,7 +21,7 @@ public class EnderBagItem extends Item {
         super(new Properties()
                 .tab(ModCreativeModeTab.DEATHCUBE_TOOLS_TAB)
                 .stacksTo(1)
-                .rarity(ModRarities.OBSIDIAN)
+                .rarity(ModRarities.EPIC)
         );
     }
 
